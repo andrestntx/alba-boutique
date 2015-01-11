@@ -26,8 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('USUARIO-PC'),
-	'forge' => array('SOLITARY-MOSS')
+	'local' => array('USUARIO-PC', 'homestead', '.local'),
+	'forge' => array('SOLITARY-MOSS', 'solitary-moss', '104.131.145.61')
 
 ));
 
