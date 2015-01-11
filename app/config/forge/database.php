@@ -13,8 +13,8 @@ return array(
 	|
 	*/
 
-	'default' => 'pgsql',
-
+	'default' => 'mysql',
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Database Connections
@@ -35,25 +35,14 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'homestead',
-			'username'  => 'homestead',
-			'password'  => 'secret',
+			'host'      => getenv('db_host'),
+			'database'  => getenv('db_name'),
+			'username'  => getenv('db_username'),
+			'password'  => getenv('db_password'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		),
-
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'alba',
-			'username' => 'postgres',
-			'password' => 'juliandavid',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
+		)
 
 	),
 
