@@ -11,7 +11,42 @@
 |
 */
 
-Route::get('/', function()
+/*
+* Routes WebSite
+*/
+Route::get('/', ['as' => '/', 'uses' => 'HomeController@showWelcome']);
+
+Route::get('contacto', ['as' => 'contacto', 'uses' => 'ContactController@index']);
+Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@send']);
+
+/*
+* Routes Dashboard
+*/
+
+Route::get('login', 'AuthController@showLogin');
+Route::post('login', 'AuthController@postLogin');
+
+Route::group(array('before' => 'auth'), function()
 {
-	var_dump(User::find(1));
+    Route::resource('admin', 'ProductController');
+    Route::get('logout', 'AuthController@getLogout');
+});
+
+
+
+
+
+
+/* 
+* Routes Errors 
+*
+*/
+App::error(function(ModelNotFoundException $e)
+{
+    return Response::view('dashboard/pages/404', array(), 404);
+});
+
+App::missing(function($exception)
+{
+	return Response::view('errors/404', array(), 404);
 });

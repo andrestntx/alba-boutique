@@ -11,23 +11,8 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		$this->call('UserTableSeeder');
+		$this->call('UsersTableSeeder');
+        $this->call('ProductsTableSeeder');
 	}
 
 }
-
-class UserTableSeeder extends Seeder {
- 
-    public function run()
-    {
-        DB::table('users')->insert(array(
-            'name' => 'Andrés Mauricio Pinzón',
-            'username' => 'andrestntx',
-            'email' => 'andres@gmail.com',
-            'password' => '123',
-            'created_at' => new DateTime,
-            'updated_at' => new DateTime 
-        ));
-    }
-}
-
