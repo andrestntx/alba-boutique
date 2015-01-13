@@ -48,3 +48,11 @@ App::missing(function($exception)
 {
 	//return Response::view('errors.404', array(), 404);
 });
+
+/* Todo tipo de error */ 
+App::error(function(Exception $exception, $code) 
+{
+    Log::error($exception);
+    return  " Mensaje: ".$exception->getMessage();
+    //return Response::view('errors.404', [], 500);
+});
