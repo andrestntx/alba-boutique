@@ -10,12 +10,8 @@ class AuthController extends BaseController {
         }
         else
         {
-        	//return View::make('auth.login');
-        	return 'hola mama';
+        	return View::make('auth.login');
         }
-
-        return 'al final';
-
  	}
 
 	public function postLogin()
