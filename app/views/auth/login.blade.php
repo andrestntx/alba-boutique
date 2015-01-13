@@ -8,9 +8,11 @@
     @section('buttons_header')
         <a href="{{url('/')}}" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Olvidaste tu contraseña?"><i class="fa fa-exclamation-circle"></i></a>
     @stop
+
     @section('title_header')
         <h2>Iniciar Sesión</h2>
     @stop
+    
     @section('form_auth')
         {{ Form::open(array('route' => 'login', 'method' => 'POST', 'class' => 'form-horizontal', 'id' => 'form-login')) }}
             <div class="form-group">
@@ -37,4 +39,3 @@
             </div>
         {{Form::close()}}
     @stop
-@stop
