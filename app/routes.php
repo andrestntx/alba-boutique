@@ -23,9 +23,8 @@ Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@s
 /*
 * Routes Dashboard
 */
-
-Route::get('login', 'AuthController@showLogin');
-Route::post('login', 'AuthController@postLogin');
+Route::get('login', ['as' => 'login', 'uses' => 'AuthController@showLogin']);
+Route::post('login', ['as' => 'login', 'uses' => 'AuthController@postLogin']);
 
 Route::group(array('before' => 'auth'), function()
 {
@@ -41,12 +40,12 @@ Route::group(array('before' => 'auth'), function()
 */
 App::error(function(ModelNotFoundException $e)
 {
-    //return Response::view('errors.404', array(), 404);
+    return Response::view('errors.404', array(), 404);
 });
 
 App::missing(function($exception)
 {
-	//return Response::view('errors.404', array(), 404);
+	return Response::view('errors.404', array(), 404);
 });
 
 /* Todo tipo de error */ 
