@@ -1,7 +1,10 @@
 <?php
 
 class Product extends Eloquent {
+
+	protected $primaryKey = 'ref';
 	protected $fillable = ['ref', 'name', 'description', 'size'];
+	protected $autoincrements = false;
 
 	public function getImageAttribute()
 	{
