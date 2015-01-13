@@ -49,6 +49,7 @@ App::error(function(ModelNotFoundException $e)
 
 App::missing(function($exception)
 {
+	var_dump($exception);
 	//return Response::view('errors.404', array(), 404);
 });
 
