@@ -27,11 +27,11 @@ Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@s
 Route::get('login', 'AuthController@showLogin');
 Route::post('login', 'AuthController@postLogin');
 
-//Route::group(array('before' => 'auth'), function()
-//{
+Route::group(array('before' => 'auth'), function()
+{
     Route::resource('admin', 'ProductController');
     Route::get('logout', 'AuthController@getLogout');
-//});
+});
 
 
 
@@ -46,14 +46,5 @@ App::error(function(ModelNotFoundException $e)
 
 App::missing(function($exception)
 {
-	var_dump($exception);
 	//return Response::view('errors.404', array(), 404);
-});
-
-/* Todo tipo de error */ 
-App::error(function(Exception $exception, $code) 
-{
-    Log::error($exception);
-    var_dump($exception);
-    //return Response::view('errors.404', [], 500);
 });
