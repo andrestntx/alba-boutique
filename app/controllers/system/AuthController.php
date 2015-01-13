@@ -6,11 +6,11 @@ class AuthController extends BaseController {
  	{
  		if (Auth::check())
         {
-            //return Redirect::to('admin');
+            return Redirect::to('admin');
         }
         else
         {
-        	return View::make('auth.layout');
+        	return View::make('auth.login');
         }
  	}
 

@@ -12,7 +12,7 @@
         <h2>Iniciar Sesión</h2>
     @stop
     @section('form_auth')
-        {{ Form::open(array('url' => 'login', 'method' => 'post', 'class' => 'form-horizontal', 'id' => 'form-login')) }}
+        {{ Form::open(array('route' => 'login', 'method' => 'POST', 'class' => 'form-horizontal', 'id' => 'form-login')) }}
             <div class="form-group">
                 <div class="col-xs-12">
                     <input type="text" id="username" name="username" class="form-control" placeholder="Usuario..">
