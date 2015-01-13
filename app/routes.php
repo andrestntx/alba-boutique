@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -45,8 +46,9 @@ Route::group(array('before' => 'auth'), function()
 {
     return Response::view('dashboard/pages/404', array(), 404);
 });
-*/
+
 App::missing(function($exception)
 {
 	return Response::view('errors/404', array(), 404);
 });
+*/
