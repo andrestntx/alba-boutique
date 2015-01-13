@@ -44,10 +44,18 @@ Route::group(array('before' => 'auth'), function()
 */
 App::error(function(ModelNotFoundException $e)
 {
-    return Response::view('errors/404', array(), 404);
+    return Response::view('errors.404', array(), 404);
 });
 
 App::missing(function($exception)
 {
-	return Response::view('errors/404', array(), 404);
+	return Response::view('errors.404', array(), 404);
+});
+
+/* Todo tipo de error */ 
+App::error(function(Exception $exception, $code) 
+{
+    Log::error($exception);
+
+    return Response::view('errors.404', [], 500);
 });
