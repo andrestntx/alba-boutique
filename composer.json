@@ -5,10 +5,7 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"way/generators": "2.*",
-		"fzaninotto/faker": "v1.3.0",
-		"guzzlehttp/guzzle": "~4.0"
+		"laravel/framework": "4.2.*"
 	},
 	"autoload": {
 		"classmap": [
