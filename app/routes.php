@@ -41,11 +41,11 @@ Route::group(array('before' => 'auth'), function()
 * Routes Errors 
 *
 */
-App::error(function(ModelNotFoundException $e)
+/*App::error(function(ModelNotFoundException $e)
 {
     return Response::view('dashboard/pages/404', array(), 404);
 });
-
+*/
 App::missing(function($exception)
 {
 	return Response::view('errors/404', array(), 404);
