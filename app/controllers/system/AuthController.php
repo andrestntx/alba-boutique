@@ -6,12 +6,15 @@ class AuthController extends BaseController {
  	{
  		if (Auth::check())
         {
-            return Redirect::to('sistema');
+            //return Redirect::to('admin');
         }
         else
         {
-        	return View::make('auth.login');
+        	//return View::make('auth.login');
+        	return 'hola mama';
         }
+
+        return 'al final';
 
  	}
 
