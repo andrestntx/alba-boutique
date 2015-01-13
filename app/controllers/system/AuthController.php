@@ -10,7 +10,7 @@ class AuthController extends BaseController {
         }
         else
         {
-        	return View::make('auth.login');
+        	return View::make('auth.layout');
         }
  	}
 
