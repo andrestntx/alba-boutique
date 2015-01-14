@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration {
 	{
 		Schema::create('products', function(Blueprint $table)
 		{
-			$table->string('ref');
+			$table->string('id');
 			$table->string('name');
 			$table->string('sizes')->default('Unica');
 			$table->integer('price')->default(0);
@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 
-			$table->primary('ref');
+			$table->primary('id');
 		});
 	}
 

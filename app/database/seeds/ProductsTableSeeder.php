@@ -8,7 +8,7 @@ class ProductsTableSeeder extends Seeder {
 	public function run()
 	{
 		//$faker = Faker::create();
-		$ref = [0, 20531, 22111, 22861, 22881, 22961, 23021, 23041, 23051];
+		$id = [0, 20531, 22111, 22861, 22881, 22961, 23021, 23041, 23051];
 
 		foreach(range(1, 8) as $index)
 		{
@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder {
 				'updated_at' 	=> $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now') 
 			]);*/
 			Product::create([
-				'ref'			=> $ref[$index],
+				'id'			=> $id[$index],
 				'name'			=> 'hola',
 				'description' 	=> 'sdfasfasfdas',
 				'created_at' 	=> new DateTime,

@@ -27,7 +27,7 @@ class ContactController extends \BaseController {
 
 		ContactMessage::create($email_data);
 
-		Mail::send('emails.feedback', $view_data, function($message) use ($email_data)
+		Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to('andresmaopinzon@gmail.com', 'Andrés Pinzón')
@@ -35,7 +35,7 @@ class ContactController extends \BaseController {
 
 		});
 
-		Mail::send('emails.info', $view_data, function($message) use ($email_data)
+		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to($email_data['email'], $email_data['name'])
@@ -46,12 +46,4 @@ class ContactController extends \BaseController {
 		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
 	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /contact/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 }

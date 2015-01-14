@@ -33,9 +33,9 @@
                             </a>
                         </h2>
                         @foreach($products as $product)
-                            <div class="col-md-3 col-sm-4 col-xs-6 text-center thumb">
-                                <div class="thumbnail">
-                                    <img class="img-responsive" src="{{$product->image}}" data-name="{{$product->name}}" data-ref="{{ $product->ref }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}"/>
+                            <div class="col-md-3 col-sm-4 col-xs-6" >
+                                <div class="thumbnail" style="height:180px; overflow:hidden;">
+                                    <img class="img-responsive" src="{{$product->image}}" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}"/>
                                 </div>
                             </div>
                         @endforeach

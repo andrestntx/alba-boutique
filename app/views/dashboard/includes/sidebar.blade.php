@@ -15,7 +15,7 @@
             <!-- Sidebar Navigation -->
             <ul class="sidebar-nav">
                 <li>
-                    <a href="{{url('/')}}">
+                    <a href="{{url('admin')}}">
                         <i class="fa fa-bar-chart-o sidebar-nav-icon"></i>
                         <span class="sidebar-nav-mini-hide">Productos</span>
                     </a>

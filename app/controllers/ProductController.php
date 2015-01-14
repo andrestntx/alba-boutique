@@ -22,7 +22,9 @@ class ProductController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$product = new Product;
+		$form_data = ['route' => ['admin.store', $product->id], 'method' => 'POST', 'files' => 'true'];
+		return View::make('dashboard.pages.product.form', compact('product', 'form_data'));
 	}
 
 	/**
@@ -33,7 +35,17 @@ class ProductController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$product = new Product;
+		$data = Input::all();
+
+	    if ($product->validAndSave($data))
+        {
+            return Redirect::route('admin.index');
+        }
+        else
+        {
+			return Redirect::route('admin.create')->withInput()->withErrors($product->errors);
+        }
 	}
 
 	/**
@@ -55,9 +67,11 @@ class ProductController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($ref)
+	public function edit($id)
 	{
-		$product = Product::findOrFail($ref);
+		$product = Product::findOrFail($id);
+		$form_data = ['route' => ['admin.update', $product->id], 'method' => 'PUT', 'files' => 'true'];
+		return View::make('dashboard.pages.product.form', compact('product', 'form_data'));
  	}
 
 	/**
@@ -69,7 +83,17 @@ class ProductController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$product = Product::findOrFail($id);
+		$data = Input::all();
+
+	    if ($product->validAndSave($data))
+        {
+            return Redirect::route('admin.index');
+        }
+        else
+        {
+			return Redirect::route('admin.edit', $product->id)->withInput()->withErrors($product->errors);
+        }
 	}
 
 	/**
@@ -81,7 +105,22 @@ class ProductController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$product = Product::findOrFail($id);
+    	try {
+    		$product->delete();
+    		$result = array('success' => true, 'msg' => 'Producto "' . $product->name . '" eliminado', 'id' => $product->id);
+    	} catch (Exception $e) {
+    		$result = array('success' => false, 'msg' => 'La Producto no se puede eliminar', 'id' => $product->id);
+    	}
+
+        if (Request::ajax())
+        {
+            return Response::json($result);
+        }
+        else
+        {
+            return Redirect::route('admin.index');
+        }
 	}
 
 }
