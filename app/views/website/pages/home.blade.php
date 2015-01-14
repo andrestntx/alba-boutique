@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="push text-center" style="margin-bottom:0px;">
                         <h1 class="animation-fadeInQuick2Inv" style="margin-top:0px;">
-                            <strong> Belleza y Dulcura a la hora de vestir </strong>
+                            <strong> Belleza y Dulzura a la hora de vestir </strong>
                         </h1>
                         <h3 class="text-light-op animation-fadeInQuickInv push-bit" style="margin-top:0px; margin-bottom:15px;">
                             <strong> <em>Más Hermosa que la primera luz del día</em></strong>

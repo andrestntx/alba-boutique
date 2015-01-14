@@ -8,7 +8,7 @@
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">
-	<meta name="description" content="@yield('meta-description', 'Alba Boutique - Tiena Online') }}">
+	<meta name="description" content="@yield('meta-description', 'Alba Boutique - Tiena Online')">
     <meta name="author" content="andrestntx">
     <meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
