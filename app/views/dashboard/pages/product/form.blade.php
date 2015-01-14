@@ -31,7 +31,7 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-10 col-xs-offset-1">	
-							<input id="image" name="image" type="file" class="file" data-show-upload="false" data-show-remove="false" multiple="true">
+							<input id="image" name="image" type="file" class="file" data-show-upload="false" data-show-remove="false">
 						</div>
 					</div>
 				</div>
@@ -40,13 +40,20 @@
 				<div class="block">
 					<div class="block-title">
 						<h2>Datos del Producto</h2>
+						<label class="switch switch-primary" style="padding: 5px 15px 4px; float:right;" title="¿Producto Visible?">
+							@if($product->visible)
+								<input type="checkbox" value="1" name="visible" checked><span></span> 
+							@else
+								<input type="checkbox" value="1" name="visible"><span></span>
+							@endif
+						</label>
 					</div>
 					<div class="form-horizontal form-bordered">
 						<div class="form-group">
 							{{ Form::label('id', 'Referencia', ['class' => 'col-md-3 control-label']) }}
 							<div class="col-md-8">
 								@if($product->exists)
-									{{ Form::text('id', null, ['class' => 'form-control', 'disabled']) }}
+									{{ Form::text('id', null, ['class' => 'form-control', 'readonly']) }}
 								@else
 									{{ Form::text('id', null, ['class' => 'form-control']) }}
 								@endif
@@ -61,7 +68,7 @@
 						<div class="form-group">
 							{{ Form::label('description', 'Descripción', ['class' => 'col-md-3 control-label']) }}
 							<div class="col-md-8">
-								{{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => '4']) }}
+								{{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) }}
 							</div>
 						</div>
 						<div class="form-group">
@@ -94,7 +101,7 @@
 @section('extra-js')
   <script type="text/javascript">
   $('#image').fileinput({
-      initialPreview: "<img src='{{url($product->image)}}' class='img-responsive' title='Foto del Producto'>",
+      initialPreview: "<img src='{{url($product->image)}}'  title='Foto del Producto' class='img-responsive' style='max-width:360px; overflow:hidden;'>",
       previewSettings: { image: {width: "100%", height: "auto"} }
   });
   </script>

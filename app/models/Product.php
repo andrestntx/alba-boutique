@@ -2,7 +2,7 @@
 
 class Product extends Eloquent {
 
-	protected $fillable = ['id', 'name', 'description', 'sizes', 'price'];
+	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible'];
 	protected $autoincrements = false;
 
     public function getPathImageAttribute()
@@ -53,7 +53,15 @@ class Product extends Eloquent {
     {
         if ($this->isValid($data) )
         {
-      
+            if(array_key_exists('visible', $data))
+            {
+                $data['visible'] = 1;
+            }
+            else
+            {
+                $data['visible'] = 0;
+            }
+
             $this->fill($data);
             $this->save();
 

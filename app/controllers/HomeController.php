@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$products = Product::paginate(8); 
+		$products = Product::whereVisible('1')->paginate(8); 
 		return View::make('website.pages.home', compact('products'));
 	}
 

@@ -1,6 +1,10 @@
 @extends('dashboard.pages.layout')
 @section('title') Productos @stop
-@section('title_page') Productos <a href="{{ route('admin.create') }}" class="btn btn-primary"> <i class="fa fa-plus"></i> Agregar</a> 
+@section('title_page')
+	Productos 
+ 	<a href="{{ route('admin.create') }}" class="btn btn-primary"> 
+ 		<i class="fa fa-plus"></i> Agregar
+	</a> 
 @stop
 @section('content_body_page')
 	<div class="row" id="catalog">

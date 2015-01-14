@@ -30,7 +30,7 @@
         <!-- User Dropdown -->
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="{{URL::to(Auth::user()->image)}}" alt="Menú de Usuario">
+                <img src="{{ URL::to(Auth::user()->image) }}" alt="Menú de Usuario">
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
                 <li class="dropdown-header">
