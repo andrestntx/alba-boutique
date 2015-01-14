@@ -54,7 +54,7 @@ class Product extends Eloquent {
 
             if(array_key_exists('image', $data))
         	{
-        		$this->uploadImage($data['image']);
+        		$this->uploadImage($data['image'], $data['id']);
         	}
           
             return true;
@@ -63,11 +63,11 @@ class Product extends Eloquent {
         return false;
     }
 
-    public function uploadImage($image)
+    public function uploadImage($image, $id)
     {
     	if(File::isFile($image))
     	{
-    		$image->move('img/products/', $this->id.'.jpg');	
+    		$image->move('img/products/', $id.'.jpg');	
     	}
 	}
 }
