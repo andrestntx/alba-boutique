@@ -7,15 +7,7 @@ class Product extends Eloquent {
 
 	public function getImageAttribute()
 	{
-        if(File::isFile('img/products/' . $this->id . '.jpg'))
-        {
-            return URL::to('img/products/' . $this->id . '.jpg');
-        }
-        else
-        {
-            return '#';
-        }
-		
+        return URL::to('img/products/' . $this->id . '.jpg');		
 	}
 
 	public function getShortNameAttribute()
