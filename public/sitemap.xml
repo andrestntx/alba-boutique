@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <loc>http://alba.boutique/</loc>
+  <changefreq>Weekly</changefreq>
+</url>
+<url>
+  <loc>http://alba.boutique/contacto</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://alba.boutique/admin</loc>
+  <changefreq>yearly</changefreq>
+</url>
+</urlset>
