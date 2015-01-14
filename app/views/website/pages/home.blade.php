@@ -35,7 +35,7 @@
                             <div class="col-md-3 col-sm-4 col-xs-6 thumb">
                                 <div class="widget">
                                     <div class="widget-content widget-content-mini themed-background-muted">
-                                        <div class="pull-right text-muted">{{ $product->id }}</div>
+                                        <div class="pull-right text-muted">Ref: {{ $product->id }}</div>
                                         <i class="fa fa-heart"></i> {{ $product->short_name }}
                                     </div>
                                     <div class="widget-content text-center">
