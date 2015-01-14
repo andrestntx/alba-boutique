@@ -20,6 +20,8 @@ Route::get('/', ['as' => '/', 'uses' => 'HomeController@showWelcome']);
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'ContactController@index']);
 Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@send']);
 
+Route::get('desgargar-producto/{id}', ['as' => 'product.download', 'uses' => 'ProductController@download']);
+
 /*
 * Routes Dashboard
 */

@@ -5,9 +5,14 @@ class Product extends Eloquent {
 	protected $fillable = ['id', 'name', 'description', 'sizes', 'price'];
 	protected $autoincrements = false;
 
+    public function getPathImageAttribute()
+    {
+        return 'img/products/' . $this->id . '.jpg';   
+    }
+
 	public function getImageAttribute()
 	{
-        return URL::to('img/products/' . $this->id . '.jpg');		
+        return URL::to($this->path_image);		
 	}
 
 	public function getShortNameAttribute()

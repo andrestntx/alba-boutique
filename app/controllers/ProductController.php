@@ -123,4 +123,17 @@ class ProductController extends \BaseController {
         }
 	}
 
+	/**
+	 * Remove the specified resource from storage.
+	 * DELETE /descargar-producto/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function download($id)
+	{
+		$product = Product::findOrFail($id);
+		return Response::download($product->path_image);
+	}
+
 }

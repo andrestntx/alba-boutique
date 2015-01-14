@@ -35,7 +35,7 @@
                         @foreach($products as $product)
                             <div class="col-md-3 col-sm-4 col-xs-6" >
                                 <div class="thumbnail" style="height:180px; overflow:hidden;">
-                                    <img class="img-responsive" src="{{$product->image}}" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}"/>
+                                    <img class="img-responsive" src="{{$product->image}}" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
                                 </div>
                             </div>
                         @endforeach
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-effect-ripple btn-primary">Descargar</button>
+                                    <a href="#" id="download" type="button" class="btn btn-effect-ripple btn-primary">Descargar</a>
                                     <button type="button" class="btn btn-effect-ripple btn-danger" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
