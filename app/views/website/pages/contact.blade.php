@@ -51,6 +51,7 @@
         </div>
     </section>
     {{-- END Contact --}}
+@stop
 @section('extra-js')
       
     {{-- Google Maps API + Gmaps Plugin, must be loaded in the page you would like to use maps (Remove 'http:' if you have SSL) --}}
