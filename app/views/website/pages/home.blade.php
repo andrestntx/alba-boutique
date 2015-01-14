@@ -1,5 +1,4 @@
 @extends('website.layout')
-@section('title') Alba Boutique @stop
 @section('extra-css')
     {{-- Css Catalog --}}
     {{ HTML::style('assets/website/css/plugins/catalog.css') }}
@@ -35,7 +34,7 @@
                         @foreach($products as $product)
                             <div class="col-md-3 col-sm-4 col-xs-6" >
                                 <div class="thumbnail" style="height:180px; overflow:hidden;">
-                                    <img class="img-responsive" src="{{$product->image}}" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
+                                    <img class="img-responsive" src="{{$product->image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
                                 </div>
                             </div>
                         @endforeach
@@ -98,7 +97,7 @@
                             <p class="feature-text text-muted push-bit">En <strong>Alba Boutique</strong> tenemos estilo único!. Nuestras prendas tienen ese toque diferente</p>
                             
                             <h3 class="site-heading"><strong>Envios a Todo Colombia</strong></h3>
-                            <p class="feature-text text-muted"><strong>Alba Boutique</strong> hace envios a todo Colombia. Llámanos o escribenos por WhatsApp <strong>313 816 7962</strong></p>
+                            <p class="feature-text "><strong>Alba Boutique</strong> hace envios a todo Colombia. Llámanos o escribenos por WhatsApp <strong>313 816 7962</strong> - Email: <strong>contacto@alba.boutique</strong></p>
                         </div>
                         <div class="col-sm-6 clearfix push-bit">
                             <img src="{{ URL::to('img/placeholders/photos/web_site_lateral.jpg') }}" alt="" class="img-responsive pull-right visibility-none" data-toggle="animation-appear" data-animation-class="animation-fadeInLeft" data-element-offset="-200" style="max-width: 460px; margin-right: -100px;">

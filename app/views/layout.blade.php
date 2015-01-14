@@ -4,13 +4,14 @@
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
-	<title>@yield('title', 'Alba Boutique')</title>
+	<title>@yield('title', 'Alba Boutique: Tienda Online')</title>
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">
-	<meta name="description" content="@yield('meta-description', 'Alba Boutique - Tiena Online')">
+	<meta name="description" content="@yield('meta-description', 'Tienda Online para Mujeres | Alba Boutique')">
+    <meta name="keywords" content="Pijamas para Mujer, Pantys, Tangas, Pijamas al por mayor, Tienda Online Mujer">
     <meta name="author" content="andrestntx">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
 	{{--End Metas--}}
 

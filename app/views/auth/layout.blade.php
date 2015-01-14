@@ -1,6 +1,7 @@
 @extends ('layout')
 
 @section ('title') .: Alba Boutique | Login :. @stop
+@section('meta-description') Login | Tienda Online Alba Boutique @stop
 @section ('css') 
 	<!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->

@@ -30,10 +30,10 @@
                 <a href="{{URL::to('/')}}" class="site-logo">
                     <i class="fa fa-heart"></i> Alba<strong> Boutique</strong>
                 </a>
-                <!-- END Site Logo -->
+                <!-- END Site Logo -->               
 
-                <!-- Site Navigation -->
-                <nav>
+                {{-- Site Navigation --}}
+                <nav id="main-meu">
                     <!-- Menu Toggle -->
                     <!-- Toggles menu on small screens -->
                     <a href="javascript:void(0)" class="btn btn-default site-menu-toggle visible-xs visible-sm">
@@ -44,15 +44,18 @@
                     <!-- Main Menu -->
                     <ul class="site-nav">
                         <li class="active">
-                            <a href="{{ URL::to('/') }}">Inicio</a>
+                            <a href="{{ URL::to('/') }}" title="Página de Inicio">Inicio</a>
                         </li>
                         <li>
-                            <a href="{{ URL::to('contacto') }}">Contacto</a>
+                            <a href="{{ URL::to('contacto') }}" title="Página de Contacto">Contacto</a>
                         </li>
                     </ul>
                     {{-- END Main Menu --}}
                 </nav>
                 {{-- END Site Navigation --}}
+                <div id="contact-tel" style="display:inline-block; height: 42px; line-height: 42px; float:right; margin-right:5px;">
+                    <spam style="font-size:16px;"><i class="fa fa-phone"></i>  313 816 7962</spam>
+                </div>
             </div>
         </header>
         {{-- END Site Header --}}

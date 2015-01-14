@@ -1,5 +1,6 @@
 @extends('website.layout')
 @section('title') Contacto - Alba Boutique @stop
+@section('meta-description') Contacto | Tienda Online Alba Boutique @stop
 @section('content')
     {{-- Intro --}}
     <section class="site-section site-section-top site-section-light themed-background-dark">
