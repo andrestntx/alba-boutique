@@ -32,9 +32,17 @@
                             </a>
                         </h2>
                         @foreach($products as $product)
-                            <div class="col-md-3 col-sm-4 col-xs-6" >
-                                <div class="thumbnail" style="height:180px; overflow:hidden;">
-                                    <img class="img-responsive" src="{{$product->image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
+                            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                                <div class="widget">
+                                    <div class="widget-content widget-content-mini themed-background-muted">
+                                        <div class="pull-right text-muted">{{ $product->id }}</div>
+                                        <i class="fa fa-heart"></i> {{ $product->short_name }}
+                                    </div>
+                                    <div class="widget-content text-center">
+                                        <div class="thumbnail" style="height:180px; overflow:hidden;">
+                                            <img class="img-responsive" src="{{$product->image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
