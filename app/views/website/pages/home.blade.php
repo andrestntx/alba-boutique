@@ -23,7 +23,7 @@
             <!-- END Intro + Action -->
 
             <!-- Promo Features -->
-            <section class="site-content site-section border-bottom">
+            <section class="site-content site-section border-bottom " style="background-color: #ebeff2;">
                 <div class="container">
                     <div class="row" id="catalog">
                         <h2 class="site-heading " style="margin-bottom:35px;">
@@ -35,7 +35,7 @@
                             <div class="col-md-3 col-sm-4 col-xs-12 thumb">
                                 <div class="widget" itemscope itemtype="http://schema.org/Product">
                                     <div class="widget-content widget-content-mini themed-background-muted">
-                                        <div class="pull-right text-muted">Ref: <span itemprop="sku"> {{ $product->id }} </span></div>
+                                        <div class="pull-right text-muted"><span itemprop="price"> $ {{ $product->price }} </span></div>
                                         <i class="fa fa-heart"></i> <span itemprop="name">{{ $product->short_name }} </span>
                                     </div>
                                     <div class="widget-content text-center">
