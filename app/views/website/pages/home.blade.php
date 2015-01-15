@@ -39,7 +39,7 @@
                                         <i class="fa fa-heart"></i> <span itemprop="name">{{ $product->short_name }} </span>
                                     </div>
                                     <div class="widget-content text-center">
-                                        <div class="thumbnail" style="height:200px; overflow:hidden;" itemprop="image">
+                                        <div class="thumbnail" style="height:200px; overflow:hidden; margin-bottom:0px;" itemprop="image">
                                             <img class="img-responsive" src="{{$product->image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
                                         </div>
                                     </div>
