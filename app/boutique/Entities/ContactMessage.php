@@ -1,6 +1,6 @@
-<?php
+<?php namespace boutique\Entities;
 
-class ContactMessage extends Eloquent {
+class ContactMessage extends \Eloquent {
 
 	protected $fillable = ['name', 'email', 'tel', 'text'];
 	protected $table = 'contact_messages';

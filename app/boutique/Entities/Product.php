@@ -1,6 +1,6 @@
-<?php
+<?php namespace boutique\Entities;
 
-class Product extends Eloquent {
+class Product extends \Eloquent {
 
 	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible'];
 	protected $autoincrements = false;

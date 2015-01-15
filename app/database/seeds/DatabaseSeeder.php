@@ -1,5 +1,7 @@
 <?php
 
+use boutique\Entities\User;
+
 class DatabaseSeeder extends Seeder {
 
 	/**

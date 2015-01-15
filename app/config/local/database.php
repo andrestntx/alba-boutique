@@ -47,9 +47,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'alba',
-			'username' => 'postgres',
-			'password' => 'juliandavid',
+			'database' => 'boutique',
+			'username' => 'hawer',
+			'password' => '123',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
