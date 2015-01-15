@@ -22,7 +22,7 @@
 
 @section('body')
 	{{-- Page Container --}}
-    <div id="page-container">
+    <div id="page-container" itemprop="mainContentOfPage">
         {{-- Site Header --}}
         <header>
             <div class="container">
@@ -49,13 +49,13 @@
                         <li>
                             <a href="{{ URL::to('contacto') }}" title="Página de Contacto">Contacto</a>
                         </li>
+                        <li>
+                            <a href=""><spam style="font-size:16px;"><i class="fa fa-phone"></i>  313 816 7962</spam></a>
+                        </li>
                     </ul>
                     {{-- END Main Menu --}}
                 </nav>
-                {{-- END Site Navigation --}}
-                <div id="contact-tel" style="display:inline-block; height: 42px; line-height: 42px; float:right; margin-right:5px;">
-                    <spam style="font-size:16px;"><i class="fa fa-phone"></i>  313 816 7962</spam>
-                </div>
+                {{-- END Site Navigation --}}                    
             </div>
         </header>
         {{-- END Site Header --}}
