@@ -39,7 +39,7 @@
                                         <i class="fa fa-heart"></i> <span itemprop="name">{{ $product->short_name }} </span>
                                     </div>
                                     <div class="widget-content text-center">
-                                        <div class="thumbnail" style="height:180px; overflow:hidden;" itemprop="image">
+                                        <div class="thumbnail" style="height:200px; overflow:hidden;" itemprop="image">
                                             <img class="img-responsive" src="{{$product->image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}"/>
                                         </div>
                                     </div>
@@ -67,15 +67,10 @@
                                         </div>
                                         <div class="col-md-4" id="product-content">
                                             <div class="block">
-                                                <h3 class="text-info"><strong>Descripción</strong></h3>
-                                                <p id="description" style="font-size:16px;"></p>
-
-                                                <h3 style="margin-top:0px;" class="text-info"><strong>Tallas</strong></h3>
-                                                <div id="size"></div>  
-
-                                                <h3>
-                                                    <strong class="text-info">Precio: </strong> $<span id="price"></span>
-                                                </h3>
+                                                <h3><strong class="text-info">Precio: </strong> $<span id="price"></span></h3>
+                                                <h3 style="margin-top:0px;" class="text-info"><strong>Tallas  </strong><span id="size" class="h4"></span></h3>
+                                                  
+                                                <p id="description" style="font-size:15px;"></p>
                                             </div>
                                             
                                         </div>
