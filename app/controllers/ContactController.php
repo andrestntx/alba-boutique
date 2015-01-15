@@ -1,6 +1,4 @@
 <?php
-use boutique\Entities\Product;
-use boutique\Entities\User;
 use boutique\Entities\ContactMessage;
 class ContactController extends \BaseController {
 

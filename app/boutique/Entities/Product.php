@@ -1,5 +1,8 @@
 <?php namespace boutique\Entities;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+
 class Product extends \Eloquent {
 
 	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible'];
@@ -12,7 +15,7 @@ class Product extends \Eloquent {
 
 	public function getImageAttribute()
 	{
-        return URL::to($this->path_image);		
+        return $this->path_image;
 	}
 
 	public function getShortNameAttribute()

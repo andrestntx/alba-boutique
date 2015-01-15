@@ -1,5 +1,5 @@
 <?php
-
+Use boutique\Entities\User;
 class AuthController extends BaseController {
 
 	public function showLogin()

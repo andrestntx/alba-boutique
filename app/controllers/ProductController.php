@@ -1,8 +1,6 @@
 <?php
 
 use boutique\Entities\Product;
-use boutique\Entities\User;
-use boutique\Entities\ContactMessage;
 class ProductController extends \BaseController {
 
 	/**
@@ -28,6 +26,7 @@ class ProductController extends \BaseController {
 		$product = new Product;
 		$form_data = ['route' => ['admin.store', $product->id], 'method' => 'POST', 'files' => 'true'];
 		return View::make('dashboard.pages.product.form', compact('product', 'form_data'));
+
 	}
 
 	/**

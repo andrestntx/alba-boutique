@@ -1,10 +1,10 @@
 @extends('dashboard.pages.layout')
 @section('class_icon_page') fa fa-heart @stop
-@section('title') 
-	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
+@section('title')
+	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif
 @stop
-@section('title_page') 
-	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
+@section('title_page')
+	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif
 @stop
 @section('breadcrumbs')
 	@if($product->exists)
@@ -30,7 +30,7 @@
 						<h2>Foto</h2>
 					</div>
 					<div class="row">
-						<div class="col-xs-10 col-xs-offset-1">	
+						<div class="col-xs-10 col-xs-offset-1">
 							<input id="image" name="image" type="file" class="file" data-show-upload="false" data-show-remove="false">
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 						<h2>Datos del Producto</h2>
 						<label class="switch switch-primary" style="padding: 5px 15px 4px; float:right;" title="¿Producto Visible?">
 							@if($product->visible)
-								<input type="checkbox" value="1" name="visible" checked><span></span> 
+								<input type="checkbox" value="1" name="visible" checked><span></span>
 							@else
 								<input type="checkbox" value="1" name="visible"><span></span>
 							@endif
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		{{Form::close()}}
 	</div>
 @stop
@@ -101,12 +101,14 @@
 @section('extra-js')
   <script type="text/javascript">
   $('#image').fileinput({
-      initialPreview: "<img src='{{url($product->image)}}'  title='Foto del Producto' class='img-responsive' style='max-width:360px; overflow:hidden;'>",
+      initialPreview: "<img src=''  title='Foto del Producto' class='img-responsive' style='max-width:360px; overflow:hidden;'>",
       previewSettings: { image: {width: "100%", height: "auto"} }
   });
   </script>
-  
+
   {{-- HTML::script('assets/js/plugins/forms/file-validator.js') --}}
   {{ HTML::script('assets/dashboard/js/pages/formProducts.js'); }}
   <script> $(function (){ formProducts.init(); });</script>
 @stop
+
+{{$product->image}}
