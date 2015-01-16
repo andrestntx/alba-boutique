@@ -26,7 +26,6 @@ class ContactController extends \BaseController {
 		$view_data = $email_data;
 
 		ContactMessage::create($email_data);
-
 		Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
@@ -34,7 +33,6 @@ class ContactController extends \BaseController {
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
 		});
-
 		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
@@ -42,8 +40,6 @@ class ContactController extends \BaseController {
 				->subject('Gracias por escribirnos...');
 
 		});
-
 		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
-
 	}
 }
