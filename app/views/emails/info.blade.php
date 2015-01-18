@@ -22,7 +22,7 @@
     </tr>
     <tr>
         <td align="center" bgcolor="#f9f9f9" style="padding: 10px 20px 20px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 18px; line-height: 30px;">
-            Atentamente, Karen Lorena :)  - Alba Boutique
+            Atentamente, Karen Delgadillo :)  - Alba Boutique
         </td>
     </tr>
     

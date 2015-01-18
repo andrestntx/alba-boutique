@@ -29,15 +29,13 @@ class ContactController extends \BaseController {
 
 		Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
         {
-		    $message->from('contacto@alba.boutique', 'Alba Boutique');
-			$message->to('andresmaopinzon@gmail.com', 'Andrés Pinzón')
+			$message->to('contacto@alba.boutique', 'Alba Boutique')
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
 		});
 
 		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
-		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to($email_data['email'], $email_data['name'])
 				->subject('Gracias por escribirnos...');
 
