@@ -35,9 +35,8 @@ class ContactController extends \BaseController {
 
 		});*/
 
-		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
+		Mail::send('emails.info', $view_data, function($message) use ($email_data)
 	    {
-		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to($email_data['email'], $email_data['name'])
 				->subject('Gracias por escribirnos...');
 
