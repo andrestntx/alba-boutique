@@ -35,11 +35,10 @@ class ContactController extends \BaseController {
 
 		});*/
 
-		Mail::send('emails.info', $view_data, function($message) use ($email_data)
+		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
 	    {
 			$message->to($email_data['email'], $email_data['name'])
 				->subject('Gracias por escribirnos...');
-
 		});
 
 		echo " envió ";
