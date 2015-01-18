@@ -35,7 +35,7 @@ class ContactController extends \BaseController {
 
 		});
 
-		echo "primer "
+		echo "primer ";
 
 		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
@@ -43,6 +43,7 @@ class ContactController extends \BaseController {
 				->subject('Gracias por escribirnos...');
 
 		});
+
 		echo " si se envio ";
 		//return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
