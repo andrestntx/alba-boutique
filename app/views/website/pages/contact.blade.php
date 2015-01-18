@@ -29,19 +29,19 @@
                     {{ Form::open(['route' => 'contacto.send', 'method' => 'POST', 'id' => 'form-contact']) }}
                         <div class="form-group">
                             {{ Form::label('contact-name', 'Nombre') }}
-                            <input type="text" id="contact-name" name="name" class="form-control input-lg" placeholder="Tu nombre">
+                            {{ Form::text('name', null, array('class' => 'form-control input-lg', 'placeholder' => 'Tu nombre')) }}
                         </div>
                         <div class="form-group">
                             {{ Form::label('contact-email', 'Correo Electrónico') }}
-                            <input type="email" id="email" name="email" class="form-control input-lg" placeholder="Tu dirección de correo electronico">
+                            {{ Form::email('email', null, array('class' => 'form-control input-lg', 'placeholder' => 'Tu dirección de correo electronico')) }}
                         </div>
                         <div class="form-group">
                             {{ Form::label('contact-tel', 'Teléfono') }}
-                            <input type="text" id="contact-tel" name="tel" class="form-control input-lg" placeholder="Tu número de telefono o celular donde te contactemos" required>
+                            {{ Form::text('tel', null, array('class' => 'form-control input-lg', 'placeholder' => 'Tu número de telefono o celular donde te contactemos')) }}
                         </div>
                         <div class="form-group">
                             {{ Form::label('contact-message', 'Mensaje') }}
-                            <textarea id="contact-message" name="text" rows="7" class="form-control input-lg" placeholder="¿Cómo podemos ayudarte?"></textarea>
+                            {{ Form::textarea('text', null, array('id' => 'contact-message', 'rows' => '7', 'class' => 'form-control input-lg', 'placeholder' =>'¿Cómo podemos ayudarte?')) }}
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-lg btn-primary">Enviar Mensaje</button>
