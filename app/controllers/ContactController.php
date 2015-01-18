@@ -40,8 +40,8 @@ class ContactController extends \BaseController {
 				->subject('Gracias por escribirnos...');
 
 		});
-
-		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
+		echo " si se envio ";
+		//return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
 	}
 }
