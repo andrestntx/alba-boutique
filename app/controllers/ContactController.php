@@ -34,20 +34,19 @@ class ContactController extends \BaseController {
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
 		});*/
-		try {
-			Mail::queue('emails.info', $view_data, function($message) use ($email_data)
-	        {
-			    $message->from('contacto@alba.boutique', 'Alba Boutique');
-				$message->to($email_data['email'], $email_data['name'])
-					->subject('Gracias por escribirnos...');
 
-			});
-		} catch (Exception $e) {
-			echo " pailas ";
-		}
+		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
+	    {
+		    $message->from('contacto@alba.boutique', 'Alba Boutique');
+			$message->to($email_data['email'], $email_data['name'])
+				->subject('Gracias por escribirnos...');
+
+		});
+
+		echo " envió ";
 		
 
-		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
+		//return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
 	}
 }
