@@ -24,28 +24,26 @@ class ContactController extends \BaseController {
 	{
 		$email_data = Input::all();
 		$view_data = $email_data;
-		echo " antes";
-		ContactMessage::create($email_data);
-		echo " mensaje guardado";
 
-		/*Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
+		ContactMessage::create($email_data);
+
+		Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
         {
-			$message->to('contacto@alba.boutique', 'Alba Boutique')
+		    $message->from('contacto@alba.boutique', 'Alba Boutique');
+			$message->to('contacto@alba.boutique', 'Andrés Pinzón')
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
-		});*/
+		});
 
-		echo "primer ";
-
-		/*Mail::queue('emails.info', $view_data, function($message) use ($email_data)
+		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
+		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to($email_data['email'], $email_data['name'])
 				->subject('Gracias por escribirnos...');
 
-		});*/
+		});
 
-		echo " si se envio ";
-		//return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
+		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
 	}
 }
