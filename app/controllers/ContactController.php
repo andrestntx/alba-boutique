@@ -27,21 +27,21 @@ class ContactController extends \BaseController {
 
 		ContactMessage::create($email_data);
 
-		Mail::send('emails.feedback', $view_data, function($message) use ($email_data)
+		/*Mail::send('emails.feedback', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to('contacto@alba.boutique', 'Andrés Pinzón')
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
-		});
+		});*/
 
-		/*Mail::send('emails.info', $view_data, function($message) use ($email_data)
+		Mail::send('emails.info', $view_data, function($message) use ($email_data)
         {
 		    $message->from('contacto@alba.boutique', 'Alba Boutique');
 			$message->to($email_data['email'], $email_data['name'])
 				->subject('Gracias por escribirnos...');
 
-		});*/
+		});
 
 		return View::make('website.pages.contact')->with('message', 'Tu Mensaje ha sido enviado. Gracias!');
 
