@@ -17,6 +17,16 @@
     {{-- Modernizr (browser feature detection library) --}}
     {{ HTML::script('assets/website/js/vendor/modernizr-2.8.3.min.js') }}
 
+    {{-- Facebook Ads --}}
+
+    {{ HTML::script('assets/website/js/seo/facebook_pixel_web.js') }}
+    <noscript>
+        <img height="1" width="1" alt="" 
+            style="display:none" src="https://www.facebook.com/tr?id=1582175242027297&amp;ev=PixelInitialized" />
+    </noscript>
+
+  {{-- End Facebook Ads --}}
+
     @yield('extra-css')
 @stop
 
@@ -24,16 +34,16 @@
 	{{-- Page Container --}}
     <div id="page-container" itemprop="mainContentOfPage">
         {{-- Site Header --}}
-        <header>
+        <header itemscope itemtype="http://schema.org/WPHeader">
             <div class="container">
                 <!-- Site Logo -->
-                <a href="{{URL::to('/')}}" class="site-logo">
+                <a href="{{URL::to('/')}}" class="site-logo" itemprop="relatedLink">
                     <i class="fa fa-heart"></i> Alba<strong> Boutique</strong>
                 </a>
                 <!-- END Site Logo -->               
 
                 {{-- Site Navigation --}}
-                <nav id="main-meu">
+                <nav>
                     <!-- Menu Toggle -->
                     <!-- Toggles menu on small screens -->
                     <a href="javascript:void(0)" class="btn btn-default site-menu-toggle visible-xs visible-sm">
@@ -44,13 +54,13 @@
                     <!-- Main Menu -->
                     <ul class="site-nav">
                         <li class="active">
-                            <a href="{{ URL::to('/') }}" title="Página de Inicio">Inicio</a>
+                            <a href="{{ URL::to('/') }}" title="Página de Inicio" itemprop="relatedLink" itemprop="significantLink">Inicio</a>
                         </li>
                         <li>
-                            <a href="{{ URL::to('contacto') }}" title="Página de Contacto">Contacto</a>
+                            <a href="{{ URL::to('contacto') }}" title="Página de Contacto" itemprop="relatedLink" itemprop="significantLink">Contacto</a>
                         </li>
                         <li>
-                            <a href=""><spam style="font-size:16px;"><i class="fa fa-phone"></i>  313 816 7962</spam></a>
+                            <a href=""><spam style="font-size:16px;" itemprop="relatedLink"><i class="fa fa-phone"></i>  313 816 7962</spam></a>
                         </li>
                     </ul>
                     {{-- END Main Menu --}}
@@ -63,7 +73,7 @@
         @yield('content')
 
         <!-- Footer -->
-        <footer class="site-footer site-section site-section-light">
+        <footer class="site-footer site-section site-section-light" itemscope itemtype="http://schema.org/WPFooter">
             <div class="container">
                 <!-- Footer Links -->
                 <div class="row">
@@ -83,11 +93,11 @@
                         </ul>
                         <h4 class="footer-heading">Nuestras Redes Sociales</h4>
                         <ul class="footer-nav footer-nav-links list-inline">
-                            <li><a href="javascript:void(0)" class="social-facebook" data-toggle="tooltip" title="Like our Facebook page"><i class="fa fa-fw fa-facebook"></i></a></li>
-                            <li><a href="javascript:void(0)" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-                            <li><a href="https://plus.google.com/106563667879480455749" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i></a></li>
-                            <li><a href="javascript:void(0)" class="social-dribbble" data-toggle="tooltip" title="Follow us on Dribbble"><i class="fa fa-fw fa-dribbble"></i></a></li>
-                            <li><a href="javascript:void(0)" class="social-youtube" data-toggle="tooltip" title="Subscribe to our Youtube channel"><i class="fa fa-fw fa-youtube-play"></i></a></li>
+                            <li><a href="https://www.facebook.com/ModaFemeninaCo" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/albaboutique" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+                            <li><a href="https://google.com/+AlbaBoutiquevillavicencio" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+                            <li><a href="http://es.pinterest.com/nuestramarca/alba-boutique-tienda-online/" class="social-pinterest" data-toggle="tooltip" title="Siguenos en Pinterest"><i class="fa fa-fw fa-pinterest"></i></a></li>
+                            <li><a href="http://instagram.com/albaboutiques" class="social-instagram" data-toggle="tooltip" title="Siguenos en Instagram"><i class="fa fa-fw fa-instagram"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4">
@@ -127,6 +137,11 @@
     {{ HTML::script('assets/website/js/vendor/bootstrap.min.js') }}
     {{ HTML::script('assets/website/js/plugins.js') }}
     {{ HTML::script('assets/website/js/app.js') }}
+    {{ HTML::script('assets/website/js/seo/google_analytics.js') }}
+
+    <script type="text/javascript" async defer
+        src="https://apis.google.com/js/platform.js?publisherid=106563667879480455749">
+    </script>
 
     @yield('extra-js')
 @stop

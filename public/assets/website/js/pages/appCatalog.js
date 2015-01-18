@@ -43,13 +43,16 @@ Product.prototype.hide = function() {
 }
 
 $(document).ready(function() {
-   $('#catalog img').on('click',function() {
+   $('#catalog img').on('click',function(e) {
         product = new Product($(this), 'myModal');
-        product.show();             
+        product.show();            
         
         $('#myModal').modal();
         $('#myModal').on('hidden.bs.modal', function() {
             product.hide();
         });
+
+        window.history.pushState({}, 'Producto ' + product.name + ' | Alba Boutique', '#producto=' + product.ref);
+        e.preventDefault();
    });  
 })
