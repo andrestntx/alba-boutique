@@ -24,8 +24,9 @@ class ContactController extends \BaseController {
 	{
 		$email_data = Input::all();
 		$view_data = $email_data;
-
+		echo " antes";
 		ContactMessage::create($email_data);
+		echo " mensaje guardado";
 
 		Mail::queue('emails.feedback', $view_data, function($message) use ($email_data)
         {
@@ -33,6 +34,8 @@ class ContactController extends \BaseController {
 				->subject('Mensaje de ' . $email_data['name']. ' a través del Formulario Contacto');
 
 		});
+
+		echo "primer "
 
 		Mail::queue('emails.info', $view_data, function($message) use ($email_data)
         {
