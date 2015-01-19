@@ -2,14 +2,14 @@
 @section('title') Regalos para tu Pareja - Alba Boutique @stop
 @section('meta-description') ¿No sabes qué regalarle a tu Pareja? - Nostras te asesoramos @stop
 @section('content')
-    <div class="media-container">
-        <section class="site-section site-section-top site-section-light" style="height: 630px; padding-top: 480px; display:block;">
+    <div class="media-promo">
+        <section class="media-promo-section">
             <div class="container">
                 <h1 ><strong>¿No sabes qué regalarle a tu Pareja?</strong></h1>
                 <h2 ><strong>Tranquilo!, nosotras te asesoramos <i class="fa fa-smile-o"></i></strong></h2>
             </div>
         </section>
-        <img class="media-image" alt="" src="{{URL::to('img/placeholders/photos/regalo_para_mi_pareja.jpg')}}">
+        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/regalo_para_mi_pareja.jpg')}}">
     </div>
     <section class="site-section site-content border-bottom overflow-hidden">
         <div class="container">
