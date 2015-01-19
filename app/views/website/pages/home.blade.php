@@ -5,12 +5,24 @@
 @stop
 @section('content') 
 	<!-- Intro + Action -->
-    <section class="site-section site-section-top site-section-light themed-background-dark-default" style="padding-bottom:5px; padding-top:85px;">
-        <div class="container">
-            <h1 class="text-center"><strong><i class="fa fa-heart"></i> Belleza y Dulzura a la hora de vestir</strong></h1>
-        </div>
-    </section>
-    <img class="media-image hidden-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_4.jpg')}}" style="width:100%;">
+    <div class="media-promo">
+        <section class="media-promo-section">
+            <div class="container">
+                <h1 style="float:left;">
+                    <strong>
+                        <i class="fa fa-heart hidden-xs"></i>
+                        <span>Belleza y Estilo</span>
+                    </strong>
+                </h1>
+                <h1 style="float:right;">
+                    <strong>
+                        <i class="fa fa-phone hidden-xs"></i> 313 816 7962
+                    </strong>
+                </h1>
+            </div>
+        </section>
+        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/web_site_8.jpg')}}">
+    </div>
 
     <!-- Promo Features -->
     <section class="site-content site-section border-bottom " style="background-color: #ebeff2;">
