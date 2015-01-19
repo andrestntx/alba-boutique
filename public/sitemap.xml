@@ -10,6 +10,14 @@
 		<changefreq>Weekly</changefreq>
 	</url>
 	<url>
+		<loc>http://alba.boutique/regalos</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://alba.boutique/ventas-al-por-mayor</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
 		<loc>http://alba.boutique/contacto</loc>
 		<changefreq>monthly</changefreq>
 	</url>
