@@ -5,6 +5,11 @@ class Product extends Eloquent {
 	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible'];
 	protected $autoincrements = false;
 
+    public function getWholesalePriceAttribute()
+    {
+        return round($this->price - ($this->price * 0.40), -2);  
+    }
+
     public function getPathImageAttribute()
     {
         return 'img/products/' . $this->id . '.jpg';   

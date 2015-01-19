@@ -21,6 +21,10 @@
 			                	<img class="img-responsive" src="{{$product->image}}"/>
 			            	</div>
 						</div>
+						<div class="widget-content widget-content-mini themed-background-muted">
+							<div class="pull-right text-muted">$ {{ $product->wholesale_price }}</div>
+							<i class="fa fa-price"></i>$ {{ $product->price }}
+						</div>
 					</div>
 				</a>
 	        </div>
