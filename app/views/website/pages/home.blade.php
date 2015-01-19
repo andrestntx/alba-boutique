@@ -11,12 +11,12 @@
                 <h1 style="float:left;">
                     <strong>
                         <i class="fa fa-heart hidden-xs"></i>
-                        <span>Belleza y Estilo</span>
+                        <span class="hidden-xs">Belleza y Estilo</span>
                     </strong>
                 </h1>
                 <h1 style="float:right;">
                     <strong>
-                        <i class="fa fa-phone hidden-xs"></i> 313 816 7962
+                        <img src="{{URL::to('img/whatsaap.png')}}" style="width:45px;" class="whatsaap">313 816 7962
                     </strong>
                 </h1>
             </div>

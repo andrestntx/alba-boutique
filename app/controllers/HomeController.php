@@ -25,4 +25,9 @@ class HomeController extends BaseController {
 	{
 		return View::make('website.pages.gift');
 	}
+
+	public function showWholesale()
+	{
+		return View::make('website.pages.wholesale');
+	}
 }
