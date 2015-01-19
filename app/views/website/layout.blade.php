@@ -56,8 +56,17 @@
                         <li class="active">
                             <a href="{{ URL::to('/') }}" title="Página de Inicio" itemprop="relatedLink" itemprop="significantLink">Inicio</a>
                         </li>
+                       {{-- <li>
+                            <a href="{{ URL::to('catalogo') }}" title="Catalogo de Productos" itemprop="relatedLink" itemprop="significantLink"><i class="gi gi-coat_hanger"></i> Catalogo</a>
+                        </li> --}}
                         <li>
-                            <a href="{{ URL::to('contacto') }}" title="Página de Contacto" itemprop="relatedLink" itemprop="significantLink">Contacto</a>
+                            <a href="{{ URL::to('ventas-al-por-mayor') }}" title="Ventas al Por Mayor" itemprop="relatedLink" itemprop="significantLink"><i class="fa fa-truck"></i> Por Mayor</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('regalos') }}" title="Regalos para tu Pareja" itemprop="relatedLink" itemprop="significantLink"><i class="hi hi-heart"></i> Regalos</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('contacto') }}" title="Página de Contacto" itemprop="relatedLink" itemprop="significantLink"><i class="gi gi-envelope"></i> Contacto</a>
                         </li>
                         <li>
                             <a href=""><spam style="font-size:16px;" itemprop="relatedLink"><i class="fa fa-phone"></i>  313 816 7962</spam></a>

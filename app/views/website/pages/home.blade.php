@@ -5,22 +5,12 @@
 @stop
 @section('content') 
 	<!-- Intro + Action -->
-    <section class="site-section site-section-top site-section-light themed-background-dark-default">
+    <section class="site-section site-section-top site-section-light themed-background-dark-default" style="padding-bottom:5px; padding-top:85px;">
         <div class="container">
-            <div class="push text-center" style="margin-bottom:0px;">
-                <h1 class="animation-fadeInQuick2Inv" style="margin-top:0px;" itemprop="about">
-                    <strong> Belleza y Dulzura a la hora de vestir </strong>
-                </h1>
-                <h2 class="text-light-op animation-fadeInQuickInv push-bit h3" style="margin-top:0px; margin-bottom:15px;">
-                    <strong> <em>Más Hermosa que la primera luz del día</em></strong>
-                </h2>
-            </div>
-            <div class="site-promo-img visibility-none" data-toggle="animation-appear" data-animation-class="animation-slideUpQuick" data-element-offset="0">
-                <img src="{{ URL::to('img/placeholders/photos/web_site.jpg') }}" alt="Catalogo Alba Boutique" itemprop="primaryImageOfPage">
-            </div>
+            <h1 class="text-center"><strong><i class="fa fa-heart"></i> Belleza y Dulzura a la hora de vestir</strong></h1>
         </div>
     </section>
-    <!-- END Intro + Action -->
+    <img class="media-image hidden-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_4.jpg')}}" style="width:100%;">
 
     <!-- Promo Features -->
     <section class="site-content site-section border-bottom " style="background-color: #ebeff2;">

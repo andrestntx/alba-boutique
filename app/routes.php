@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 * Routes WebSite
 */
 Route::get('/', ['as' => '/', 'uses' => 'HomeController@showWelcome']);
+Route::get('regalos', ['as' => 'regalos', 'uses' => 'HomeController@showGift']);
 
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'ContactController@index']);
 Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@send']);

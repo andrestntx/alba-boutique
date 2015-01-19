@@ -21,4 +21,8 @@ class HomeController extends BaseController {
 		return View::make('website.pages.home', compact('products'));
 	}
 
+	public function showGift()
+	{
+		return View::make('website.pages.gift');
+	}
 }

@@ -30,6 +30,8 @@ var App = function() {
         // Initialize Placeholder (for IE9)
         $('input, textarea').placeholder();
 
+        // Initialize Image Lightbox
+        $('[data-toggle="lightbox-image"]').magnificPopup({type: 'image', image: {titleSrc: 'title'}});
 
         // Toggle animation class when an element appears with Jquery Appear plugin
         $('[data-toggle="animation-appear"]').each(function(){
