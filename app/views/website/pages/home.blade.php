@@ -21,7 +21,7 @@
                 </h1>
             </div>
         </section>
-        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/web_site_8.jpg')}}">
+        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/web_site_9.jpg')}}">
     </div>
 
     <!-- Promo Features -->
