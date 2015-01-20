@@ -8,7 +8,7 @@
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">
-	<meta name="description" content="@yield('meta-description', 'Tienda Online para Mujeres | Alba Boutique')">
+	<meta name="description" content="@yield('meta-description', 'Alba Boutique: Belleza y Dulzura a la hora de vestir - Ropa para Mujer')">
   <meta name="keywords" content="Pijamas para Mujer, Pantys, Tangas, Pijamas al por mayor, Tienda Online Mujer">
   <meta name="author" content="Alba Boutique">
   <meta name="robots" content="index, follow">
