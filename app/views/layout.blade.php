@@ -4,12 +4,12 @@
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
-	<title>@yield('title', 'Alba Boutique - Belleza y Dulzura a la hora de vestir')</title>
+	<title>@yield('title', 'Alba Boutique - Hermosa Ropa Femenina de Calidad')</title>
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">
 	<meta name="description" content="@yield('meta-description', 'Alba Boutique: Belleza y Dulzura a la hora de vestir - Ropa para Mujer')">
-  <meta name="keywords" content="Pijamas para Mujer, Pantys, Tangas, Pijamas al por mayor, Tienda Online Mujer">
+  <meta name="keywords" content="Pijamas para Mujer, Pantys, Tangas, Pijamas al por mayor, Tienda Online Mujer, Ropa interior femenina, Ropa intima">
   <meta name="author" content="Alba Boutique">
   <meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
