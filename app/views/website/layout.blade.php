@@ -5,27 +5,14 @@
     {{ HTML::style('assets/website/css/bootstrap.min.css') }}
 
     {{-- Related styles of various icon packs and plugins --}}
-    {{ HTML::style('assets/website/css/plugins.css') }}
+    {{ HTML::style('assets/website/css/plugins.min.css') }}
 
     {{-- The main stylesheet of this template. All Bootstrap overwrites are defined in here --}}
-    {{ HTML::style('assets/website/css/main.css') }}
+    {{ HTML::style('assets/website/css/main.min.css') }}
 
     {{-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) --}}
-    {{ HTML::style('assets/website/css/themes.css') }}
+    {{ HTML::style('assets/website/css/themes.min.css') }}
     {{-- END Stylesheets --}}
-
-    {{-- Modernizr (browser feature detection library) --}}
-    {{ HTML::script('assets/website/js/vendor/modernizr-2.8.3.min.js') }}
-
-    {{-- Facebook Ads --}}
-
-    {{ HTML::script('assets/website/js/seo/facebook_pixel_web.js') }}
-    <noscript>
-        <img height="1" width="1" alt="" 
-            style="display:none" src="https://www.facebook.com/tr?id=1582175242027297&amp;ev=PixelInitialized" />
-    </noscript>
-
-  {{-- End Facebook Ads --}}
 
     @yield('extra-css')
 @stop
@@ -138,14 +125,25 @@
 @stop
 
 @section('js')
+    {{-- Modernizr (browser feature detection library) --}}
+    {{ HTML::script('assets/website/js/vendor/modernizr-2.8.3.min.js') }}
+
+    {{-- Facebook Ads --}}
+    {{ HTML::script('assets/website/js/seo/facebook_pixel_web.js') }}
+    <noscript>
+        <img height="1" width="1" alt="" 
+            style="display:none" src="https://www.facebook.com/tr?id=1582175242027297&amp;ev=PixelInitialized" />
+    </noscript>
+    {{-- End Facebook Ads --}}
+
 	{{-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) --}}
     {{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
     <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-2.1.1.min.js"%3E%3C/script%3E'));</script>
 
     {{-- Bootstrap.js, Jquery plugins and Custom JS code --}}
     {{ HTML::script('assets/website/js/vendor/bootstrap.min.js') }}
-    {{ HTML::script('assets/website/js/plugins.js') }}
-    {{ HTML::script('assets/website/js/app.js') }}
+    {{ HTML::script('assets/website/js/plugins.min.js') }}
+    {{ HTML::script('assets/website/js/app.min.js') }}
     {{ HTML::script('assets/website/js/seo/google_analytics.js') }}
 
     <script type="text/javascript" async defer
