@@ -17,8 +17,6 @@ class Product extends Eloquent {
 
     public function getPathSmallImageAttribute()
     {
-        $img = Image::make('img/products/' . $this->id . '.jpg')->widen(250);
-        $img->save('img/products/' . $this->id . '_small.jpg');
         return 'img/products/' . $this->id . '_small.jpg';
     }
 
