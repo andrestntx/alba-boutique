@@ -1,7 +1,21 @@
 @extends('website.layout')
 @section('extra-css')
     {{-- Css Catalog --}}
-    {{ HTML::style('assets/website/css/plugins/catalog.css') }}
+    <style type="text/css">
+        #catalog .thumbnail {
+            border-width: 1px;
+        }
+
+        #catalog .thumbnail:hover {
+            border-color: #337ab7;
+            transform: scale(1.1); 
+            -ms-transform: scale(1.1); 
+            -webkit-transform: scale(1.1); 
+            -o-transform: scale(1.1); 
+            -moz-transform: scale(1.1);
+        }
+
+    </style>
 @stop
 @section('content') 
 	<!-- Intro + Action -->
