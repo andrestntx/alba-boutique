@@ -9,7 +9,8 @@
                 <h2 ><strong>Excelentes precios para tu negocio </strong></h2>
             </div>
         </section>
-        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/ventas_al_por_mayor.jpg')}}">
+        <img class="media-promo-image hidden-xs" alt="Ventas al por mayor de ropa interior femenina" src="{{URL::to('img/placeholders/photos/ventas_al_por_mayor.jpg')}}">
+        <img class="media-promo-image visible-xs" alt="Ventas al por mayor de ropa interior femenina" src="{{URL::to('img/placeholders/photos/ventas_al_por_mayor_400.jpg')}}">
     </div>
     <section class="site-section site-content border-bottom overflow-hidden">
         <div class="container">

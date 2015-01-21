@@ -9,7 +9,8 @@
                 <h2 ><strong>Tranquilo!, nosotras te asesoramos <i class="fa fa-smile-o"></i></strong></h2>
             </div>
         </section>
-        <img class="media-promo-image" alt="" src="{{URL::to('img/placeholders/photos/regalo_para_mi_pareja.jpg')}}">
+        <img class="media-promo-image hidden-xs" alt="Un buen regalo para una mujer" src="{{URL::to('img/placeholders/photos/regalo_para_mi_pareja.jpg')}}">
+        <img class="media-promo-image visible-xs" alt="Un buen regalo para una mujer" src="{{URL::to('img/placeholders/photos/regalo_para_mi_pareja_400.jpg')}}">
     </div>
     <section class="site-section site-content border-bottom overflow-hidden">
         <div class="container">
