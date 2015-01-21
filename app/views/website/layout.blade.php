@@ -2,17 +2,7 @@
 @section('css')  
 	{{-- Stylesheets --}}
     {{-- Bootstrap is included in its original form, unaltered --}}
-    {{ HTML::style('assets/website/css/bootstrap.min.css') }}
-
-    {{-- Related styles of various icon packs and plugins --}}
-    {{ HTML::style('assets/website/css/plugins.min.css') }}
-
-    {{-- The main stylesheet of this template. All Bootstrap overwrites are defined in here --}}
-    {{ HTML::style('assets/website/css/main.min.css') }}
-
-    {{-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) --}}
-    {{ HTML::style('assets/website/css/themes.min.css') }}
-    {{-- END Stylesheets --}}
+    {{ HTML::style('assets/website/css/website.min.css') }}
 
     @yield('extra-css')
 @stop
