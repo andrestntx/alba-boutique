@@ -17,6 +17,8 @@ class Product extends Eloquent {
 
     public function getPathSmallImageAttribute()
     {
+        $img = Image::make('img/products/' . $this->id . '.jpg')->widen(180);
+        $img->save('img/products/' . $this->id . '_small.jpg');
         return 'img/products/' . $this->id . '_small.jpg';
     }
 
@@ -91,7 +93,7 @@ class Product extends Eloquent {
     	if(File::isFile($image))
     	{
     		$image->move('img/products/', $id.'.jpg');	
-            $img = Image::make('img/products/' . $this->id . '.jpg')->widen(300);
+            $img = Image::make('img/products/' . $this->id . '.jpg')->widen(180);
             $img->save('img/products/' . $this->id . '_small.jpg');
     	}
 	}
