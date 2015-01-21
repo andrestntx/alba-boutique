@@ -13,4 +13,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+    # enable expirations
+    ExpiresActive On
+    ExpiresDefault A604800
+
 </IfModule>
