@@ -4,7 +4,7 @@
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
-	<title>@yield('title', 'Alba Boutique - Hermosa Ropa Femenina de Calidad')</title>
+	<title>@yield('title', 'Alba Boutique | Hermosa Ropa Femenina de la mejor Calidad')</title>
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">

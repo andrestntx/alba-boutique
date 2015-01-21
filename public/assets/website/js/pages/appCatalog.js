@@ -1,6 +1,6 @@
 function Product (image, modal_id) {
     this.modal_id = modal_id;
-    this.src = image.attr('src');
+    this.src = image.attr('data-imgsrc');
     this.ref = image.attr('data-ref');
     this.name = image.attr('data-name');
     this.description = image.attr('data-description');
