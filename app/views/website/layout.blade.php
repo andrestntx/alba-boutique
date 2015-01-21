@@ -117,14 +117,13 @@
 @section('js')
     {{-- Modernizr (browser feature detection library) --}}
     {{ HTML::script('assets/website/js/vendor/modernizr-2.8.3.min.js') }}
-
+    
     {{-- Facebook Ads --}}
     {{ HTML::script('assets/website/js/seo/facebook_pixel_web.js') }}
     <noscript>
         <img height="1" width="1" alt="" 
             style="display:none" src="https://www.facebook.com/tr?id=1582175242027297&amp;ev=PixelInitialized" />
     </noscript>
-    {{-- End Facebook Ads --}}
 
 	{{-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) --}}
     {{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
