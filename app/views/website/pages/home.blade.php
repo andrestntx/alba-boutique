@@ -132,7 +132,7 @@
                         <p class="feature-text "><strong itemprop="legalName">Alba Boutique</strong> hace envios a todo Colombia. Llámanos o escribenos por WhatsApp <strong itemprop="telephone">313 816 7962</strong> - Email: <strong itemprop="email">contacto@alba.boutique</strong></p>
                     </article>
                 </div>
-                <picture class="col-sm-6 clearfix push-bit">
+                <picture class="col-sm-6 clearfix push-bit hidden-xs">
                     <img src="{{ URL::to('img/placeholders/photos/web_site_lateral_2.jpg') }}" alt="Panty Alba Boutique" class="img-responsive pull-right visibility-none" data-toggle="animation-appear" data-animation-class="animation-fadeInLeft" data-element-offset="100" style="max-width: 330px; margin-right: -60px;">
                 </picture>
             </div>

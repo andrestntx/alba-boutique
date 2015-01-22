@@ -12,6 +12,13 @@ class Product extends Eloquent {
 
     public function getPathImageAttribute()
     {
+        $img = Image::make('img/products/' . $this->id . '.jpg');
+        if($img->width() > 560)
+        {
+            $img->widen(560);
+            $img->save('img/products/' . $this->id . '.jpg');
+        }
+        
         return 'img/products/' . $this->id . '.jpg';   
     }
 
@@ -91,7 +98,13 @@ class Product extends Eloquent {
     	if(File::isFile($image))
     	{
     		$image->move('img/products/', $id.'.jpg');	
-            $img = Image::make('img/products/' . $this->id . '.jpg')->widen(250);
+            $img = Image::make('img/products/' . $this->id . '.jpg');
+            if($img->width() > 560)
+            {
+                $img->widen(560);
+                $img->save('img/products/' . $this->id . '.jpg');
+            }
+            $img->widen(250);
             $img->save('img/products/' . $this->id . '_small.jpg');
     	}
 	}
