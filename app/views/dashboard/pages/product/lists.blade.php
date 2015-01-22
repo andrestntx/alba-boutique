@@ -18,7 +18,7 @@
 						</div>
 						<div class="widget-content text-center">
 							<div class="thumbnail" style="height:180px; overflow:hidden;">
-			                	<img class="img-responsive" src="{{$product->image}}"/>
+			                	<img class="img-responsive" src="{{URL::to($product->path_small_image)}}"/>
 			            	</div>
 						</div>
 						<div class="widget-content widget-content-mini themed-background-muted">

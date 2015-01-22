@@ -12,13 +12,6 @@ class Product extends Eloquent {
 
     public function getPathImageAttribute()
     {
-        $img = Image::make('img/products/' . $this->id . '.jpg');
-        if($img->width() > 560)
-        {
-            $img->widen(560);
-            $img->save('img/products/' . $this->id . '.jpg');
-        }
-        
         return 'img/products/' . $this->id . '.jpg';   
     }
 
