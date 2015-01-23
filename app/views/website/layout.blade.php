@@ -79,6 +79,7 @@
                         </ul>
                         <h4 class="footer-heading">Nuestras Redes Sociales</h4>
                         <ul class="footer-nav footer-nav-links list-inline">
+                            <a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher">Google+</a>
                             <li><a href="https://www.facebook.com/ModaFemeninaCo" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/albaboutique" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
                             <li><a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i> Google+</a></li>
