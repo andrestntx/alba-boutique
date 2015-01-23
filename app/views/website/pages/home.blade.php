@@ -26,6 +26,7 @@
                     <strong>
                         <i class="fa fa-heart hidden-xs"></i>
                         <span class="hidden-xs">Belleza y Estilo</span>
+                        <a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher">Google+</a>
                     </strong>
                 </h1>
                 <h1 style="float:right;">
