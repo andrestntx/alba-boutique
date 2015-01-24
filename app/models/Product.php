@@ -88,16 +88,14 @@ class Product extends Eloquent {
 
     public function uploadImage($image, $id)
     {
-    	if(File::isFile($image))
-    	{
+    	//if(File::isFile($image))
+    	//{
             $img = Image::make($image->getRealPath());
-            if($img->width() > 560)
-            {
-                $img->widen(560);
-                $img->save('img/products/' . $this->id . '.jpg');
-            }
+            $img->widen(560);
+            $img->save('img/products/' . $this->id . '.jpg');
+            
             $img->widen(250);
             $img->save('img/products/' . $this->id . '_small.jpg');
-    	}
+    	//}
 	}
 }
