@@ -90,8 +90,7 @@ class Product extends Eloquent {
     {
     	if(File::isFile($image))
     	{
-    		$image->move('img/products/', $id.'.jpg');	
-            $img = Image::make('img/products/' . $this->id . '.jpg');
+            $img = Image::make($image->getRealPath());
             if($img->width() > 560)
             {
                 $img->widen(560);
