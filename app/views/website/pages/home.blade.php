@@ -59,7 +59,7 @@
                             <div class="widget-content text-center">
                                 <a href="#producto={{$product->id}}">
                                     <div class="thumbnail" style="height:200px; overflow:hidden; margin-bottom:0px;" itemprop="image">
-                                        <img class="img-responsive" src="{{$product->path_small_image}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}" data-imgsrc ="{{$product->image}}"/>
+                                        <img class="img-responsive" src="{{URL::to($product->path_small_image)}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}" data-imgsrc ="{{URL::to($product->image)}}"/>
                                     </div>
                                 </a>
                             </div>
