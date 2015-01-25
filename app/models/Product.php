@@ -9,7 +9,7 @@ class Product extends Eloquent {
 
     public function getNameUrlAttribute()
     {
-        return str_replace(' ', '-', $this->name) . '-' . $this->id;
+        return urlencode(str_replace(' ', '-', trim($this->name)) . '-' . $this->id);
     }
 
     public function getPathImageAttribute()
@@ -25,7 +25,7 @@ class Product extends Eloquent {
 
     public function getPathSmallImageAttribute()
     {
-        return self::$path_images . $this->name_url . '_small' . self::$extension_images;
+        return self::$path_images . $this->name_url . '-small' . self::$extension_images;
     }
 
     public function getSmallImageAttribute()
