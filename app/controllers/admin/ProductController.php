@@ -135,7 +135,7 @@ class ProductController extends \BaseController {
 	public function download($id)
 	{
 		$product = Product::findOrFail($id);
-		return Response::download($product->path_image);
+		return Response::download($product->image);
 	}
 
 }

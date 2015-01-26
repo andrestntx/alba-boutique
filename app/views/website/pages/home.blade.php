@@ -17,8 +17,8 @@
                 </h1>
             </div>
         </section>
-        <img class="media-promo-image hidden-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_9.jpg')}}">
-        <img class="media-promo-image visible-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_9_400.jpg')}}">
+        <img class="media-promo-image hidden-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_10.jpg')}}">
+        <img class="media-promo-image visible-xs" alt="" src="{{URL::to('img/placeholders/photos/web_site_10_400.jpg')}}">
     </div>
 
     <!-- Promo Features -->
