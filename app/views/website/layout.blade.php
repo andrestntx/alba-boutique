@@ -33,9 +33,9 @@
                         <li class="active">
                             <a href="{{ URL::to('/') }}" title="Página de Inicio" itemprop="relatedLink" itemprop="significantLink">Inicio</a>
                         </li>
-                       {{-- <li>
-                            <a href="{{ URL::to('catalogo') }}" title="Catalogo de Productos" itemprop="relatedLink" itemprop="significantLink"><i class="gi gi-coat_hanger"></i> Catalogo</a>
-                        </li> --}}
+                        <li>
+                            <a href="{{ URL::to('catalogo') }}" title="Catálogo de Productos" itemprop="relatedLink" itemprop="significantLink"><i class="gi gi-coat_hanger"></i> Catalogo</a>
+                        </li>
                         <li>
                             <a href="{{ URL::to('ventas-al-por-mayor') }}" title="Ventas al Por Mayor" itemprop="relatedLink" itemprop="significantLink"><i class="fa fa-truck"></i> Por Mayor</a>
                         </li>

@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 Route::get('/', ['as' => '/', 'uses' => 'HomeController@showWelcome']);
 Route::get('regalos', ['as' => 'regalos', 'uses' => 'HomeController@showGift']);
 Route::get('ventas-al-por-mayor', ['as' => 'ventas-al-por-mayor', 'uses' => 'HomeController@showWholesale']);
+Route::resource('catalogo', 'CatalogController');
+Route::get('catalogo/{category}/{product}', ['as' => 'catalogo.producto', 'uses' => 'CatalogController@showProduct']);
 
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'ContactController@index']);
 Route::post('contacto', ['as' => 'contacto.send', 'uses' => 'ContactController@send']);

@@ -12,13 +12,46 @@ class Product extends Eloquent {
     {
         return self::whereVisible('1')->orderBy('name')->paginate(8); 
     }
+
+    public static function getHomeCatalog()
+    {
+        return self::whereVisible('1')->whereCategoryId(1)->orderBy('name')->paginate(8); 
+    }
+
+    public static function findOrFailByNameUrl($name_url, $category_name_url)
+    {
+        $product = self::select('products.name', 'products.description', 'products.sizes', 'products.price', 'products.name_url',
+            'products.id', 'products.category_id', 'categories.name as category_name', 'categories.name_url as category_name_url')
+            ->joinCategoryByNameUrl($name_url, $category_name_url)->first();
+        if(is_null($product))
+        {
+            App::abort('404');
+        }
+        return $product;
+    }
+
+    public static function scopeJoinCategoryByNameUrl($query, $name_url, $category_name_url)
+    {
+        return $query->join('categories', function($join) use($name_url, $category_name_url) { 
+            $join->on('categories.id', '=', 'products.category_id')
+                ->where('products.name_url', '=', $name_url)
+                ->where('categories.name_url', '=', $category_name_url);
+        });
+    }
+
+    public function relatedProducts()
+    {
+        return self::take(4)->whereNotIn('id', [$this->id])->whereCategoryId($this->category_id)->get();
+    }
+
+    
     /* End Querys*/
 
     /* Mutators */
 
-    public function setNameAttribute($name)
+    public function getFormatedPriceAttribute()
     {
-        $this->name = trim($name);
+        return number_format($this->price, 0);
     }
 
     public function getWholesalePriceAttribute()

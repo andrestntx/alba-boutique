@@ -9,6 +9,19 @@ class Category extends Eloquent {
 	protected static $path_images = 'img/categories/'; 
     protected static $extension_images = '.jpg';
 
+    /* Querys */
+    public static function findOrFailByNameUrl($name_url)
+    {
+        $category = self::with('products')->whereNameUrl($name_url)->first();
+        if(is_null($category))
+        {
+            App::abort('404');
+        }
+        return $category;
+    }
+
+    /* End Querys */
+
     public function getShortNameAttribute()
     {
         return substr($this->name, 0, 25);
@@ -38,6 +51,10 @@ class Category extends Eloquent {
 
     /* End Mutators */
 
+    public function products()
+    {
+         return $this->hasMany('Product');
+    }
 
     /* Functions */
     public function widenImage($width, $path)

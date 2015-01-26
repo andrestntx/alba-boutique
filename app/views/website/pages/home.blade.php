@@ -6,6 +6,10 @@
             border-width: 1px;
         }
 
+        #catalog .thumbnail{
+            transition: transform 0.5s ease-out 0s;
+        }
+
         #catalog .thumbnail:hover {
             border-color: #337ab7;
             transform: scale(1.1); 
@@ -26,7 +30,6 @@
                     <strong>
                         <i class="fa fa-heart hidden-xs"></i>
                         <span class="hidden-xs">Belleza y Estilo</span>
-                        <a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher">Google+</a>
                     </strong>
                 </h1>
                 <h1 style="float:right;">
@@ -47,6 +50,9 @@
                 <h1 class="site-heading h2" style="margin-bottom:35px;">
                     <a href="#nuestro-catalogo" name="nuestro-catalogo">
                         <strong>Nuestro Catalogo</strong>
+                    </a>
+                    <a href="{{ URL::to('catalogo') }}" class="btn btn-primary"> 
+                        <i class="gi gi-coat_hanger"></i>Ver Todo
                     </a>
                 </h1>
                 @foreach($products as $product)
