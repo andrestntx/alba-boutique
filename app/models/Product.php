@@ -71,7 +71,7 @@ class Product extends Eloquent {
 
     public function getImageAttribute()
     {
-        $this->widenImage(560, $this->path_image);
+        $this->updateImage(560, $this->path_image);
         return $this->path_image;      
     }
 
@@ -82,7 +82,7 @@ class Product extends Eloquent {
 
     public function getSmallImageAttribute()
     {
-        $this->widenImage(250, $this->path_small_image);
+        $this->updateImage(250, $this->path_small_image);
         return $this->path_small_image;
     }
 
@@ -92,11 +92,16 @@ class Product extends Eloquent {
     /* Functions */
     public function widenImage($width, $path)
     {
+        $image = Image::make(self::$path_images . $this->id . self::$extension_images);
+        $image->widen($width);
+        $image->save($path);
+    }
+
+    public function updateImage($width, $path)
+    {
         if($this->exists && !File::exists($path))
         {
-            $image = Image::make(self::$path_images . $this->id . self::$extension_images);
-            $image->widen($width);
-            $image->save($path);
+            $this->widenImage($width, $path);
         }
     }
 
@@ -174,6 +179,8 @@ class Product extends Eloquent {
                 $img->widen(560);
             }
             $img->save(self::$path_images . $id . self::$extension_images);
+            $this->widenImage(560, $this->path_image);
+            $this->widenImage(250, $this->path_small_image);
     	}
 	}
 
