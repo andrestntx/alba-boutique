@@ -17,8 +17,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$products = Product::getHomeCatalog();
-		return View::make('website.pages.home', compact('products'));
+		$categories = Category::getHomeCatalog(); 
+		return View::make('website.pages.home', compact('categories'));
 	}
 
 	public function showGift()

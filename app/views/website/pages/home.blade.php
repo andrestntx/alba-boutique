@@ -1,25 +1,6 @@
 @extends('website.layout')
 @section('extra-css')
-    {{-- Css Catalog --}}
-    <style type="text/css">
-        #catalog .thumbnail {
-            border-width: 1px;
-        }
 
-        #catalog .thumbnail{
-            transition: transform 0.5s ease-out 0s;
-        }
-
-        #catalog .thumbnail:hover {
-            border-color: #337ab7;
-            transform: scale(1.1); 
-            -ms-transform: scale(1.1); 
-            -webkit-transform: scale(1.1); 
-            -o-transform: scale(1.1); 
-            -moz-transform: scale(1.1);
-        }
-
-    </style>
 @stop
 @section('content') 
 	<!-- Intro + Action -->
@@ -46,35 +27,25 @@
     <!-- Promo Features -->
     <section class="site-content site-section border-bottom " style="background-color: #ebeff2;">
         <div class="container">
-            <div class="row" id="catalog">
+            <div class="row row-items">
                 <h1 class="site-heading h2" style="margin-bottom:35px;">
                     <a href="#nuestro-catalogo" name="nuestro-catalogo">
-                        <strong>Nuestro Catalogo</strong>
-                    </a>
-                    <a href="{{ URL::to('catalogo') }}" class="btn btn-primary"> 
-                        <i class="gi gi-coat_hanger"></i>Ver Todo
+                        <strong>Catalogo de Productos</strong>
                     </a>
                 </h1>
-                @foreach($products as $product)
-                    <article class="col-md-3 col-sm-4 col-xs-12 thumb">
-                        <div class="widget" itemscope itemtype="http://schema.org/Product">
-                            <div class="widget-content widget-content-mini themed-background-muted">
-                                <div class="pull-right text-muted"><span itemprop="price"> $ {{ $product->price }} </span></div>
-                                <i class="fa fa-heart"></i> <span itemprop="name">{{ $product->short_name }} </span>
+                @foreach($categories as $category)
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <a href="{{route('catalogo.show', $category->name_url)}}" class="post">
+                            <div class="post-image" style="height:280px;">
+                                <img src="{{URL::to($category->image)}}" alt="" class="img-responsive">
                             </div>
-                            <div class="widget-content text-center">
-                                <a href="#producto={{$product->id}}">
-                                    <div class="thumbnail" style="height:200px; overflow:hidden; margin-bottom:0px;" itemprop="image">
-                                        <img class="img-responsive" src="{{URL::to($product->small_image)}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique" data-name="{{$product->name}}" data-ref="{{ $product->id }}" data-description="{{ $product->description }}" data-size="{{ $product->sizes }}" data-price =" {{$product->price }}", data-download="{{route('product.download', $product->id)}}" data-imgsrc ="{{URL::to($product->image)}}"/>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                            <h2 class="h3">
+                                <strong class="text-info">{{$category->name}}</strong>
+                            </h2>
+                            <p>{{ $category->description }}</p>
+                        </a>
+                    </div>
                 @endforeach
-            </div>
-            <div class="row text-center">
-                {{ $products->fragment('nuestro-catalogo')->links('pagination.appui-lg') }}
             </div>
 
             {{-- Regular Fade --}}
