@@ -20,6 +20,11 @@ class Category extends Eloquent {
         return $category;
     }
 
+    public static function getHomeCatalog()
+    {
+        return self::whereVisible('1')->get();
+    }
+
     /* End Querys */
 
     public function getShortNameAttribute()

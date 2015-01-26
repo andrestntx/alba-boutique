@@ -9,7 +9,7 @@ class CatalogController extends \BaseController {
 	 */
 	public function index()
 	{
-		$categories = Category::all(); 
+		$categories = Category::getHomeCatalog(); 
 		return View::make('website.pages.catalog.categories', compact('categories'));
 	}
 
