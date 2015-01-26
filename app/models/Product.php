@@ -92,9 +92,13 @@ class Product extends Eloquent {
     /* Functions */
     public function widenImage($width, $path)
     {
-        $image = Image::make(self::$path_images . $this->id . self::$extension_images);
-        $image->widen($width);
-        $image->save($path);
+        if(File::exists(self::$path_images . $this->id . self::$extension_images))
+        {
+            $image = Image::make(self::$path_images . $this->id . self::$extension_images);
+            $image->widen($width);
+            $image->save($path);
+        }
+        
     }
 
     public function updateImage($width, $path)

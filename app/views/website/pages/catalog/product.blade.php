@@ -27,83 +27,85 @@
 @section('title') Producto {{ $product->name }} | Alba Boutique @stop
 @section('meta-description') {{ $product->description }} | Alba Boutique @stop
 @section('content')
-    <!-- Intro -->
-    <section class="site-section site-section-top site-section-light themed-background-dark">
-        <div class="container">
-            <h1 class="text-center animation-fadeInQuickInv"><strong>Producto {{ $product->name }}</strong></h1>
-        </div>
-    </section>
-    <!-- END Intro -->
-
-    <!-- Project Navigation -->
-    <section class="site-content site-section-mini themed-background-muted border-bottom">
-        <div class="container">
-            <div class="site-block clearfix">
-                <ul class="breadcrumb breadcrumb-top" style="font-size:1em;">
-                    <li>
-                        <a href="{{route('catalogo.index')}}">
-                            Catálogo
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('catalogo.show', $product->category_name_url)}}">
-                            {{$product->category_name}}
-                        </a>
-                    </li>
-                    <li> {{$product->name}} </li>
-                </ul>
+    <div itemscope itemtype="http://schema.org/Product">
+        <!-- Intro -->
+        <section class="site-section site-section-top site-section-light themed-background-dark">
+            <div class="container">
+                <h1 class="text-center animation-fadeInQuickInv"><strong itemprop="name">{{ $product->name }}</strong></h1>
             </div>
-        </div>
-    </section>
-    <!-- END Project Navigation -->
+        </section>
+        <!-- END Intro -->
 
-
-    <!-- Project Info -->
-    <section class="site-content site-section border-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 site-block">
-                    <!-- Carousel & Info -->
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <img src="{{URL::to($product->image)}}" alt="{{$product->name}}" class="img-responsive" itemprop="image">
-                        </div>
-                        <div class="col-sm-4" id="product-content">
-                            <div class="block">
-                                <h2 id="description"  itemprop="description"> {{ $product->description }} </h2>
-                                <p><strong class="text-info" tyle="font-size:19px;">Precio: </strong> 
-                                    $<span id="price" itemprop="price">{{ $product->formated_price }}</span>
-                                </p>
-                                <p>
-                                    <strong class="text-info">Tallas:  </strong>
-                                    <span id="size"> {{ $product->sizes }} </span>
-                                </p>     
-                                <p>
-                                    <strong class="text-info">Referencia:  </strong>
-                                    <span id="ref"> {{ $product->id }} </span>
-                                </p>
-                                <div class="btn btn-effect-ripple btn-success">
-                                    <i class="fa fa-phone"></i> 313 816 7962
-                                </div>
-                                <a href="{{ URL::to('desgargar-producto/'.$product->id) }}" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope="" itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
-                 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END Carousel & Info -->
+        <!-- Project Navigation -->
+        <section class="site-content site-section-mini themed-background-muted border-bottom">
+            <div class="container">
+                <div class="site-block clearfix">
+                    <ul class="breadcrumb breadcrumb-top" style="font-size:1em;">
+                        <li>
+                            <a href="{{route('catalogo.index')}}">
+                                Catálogo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('catalogo.show', $product->category_name_url)}}">
+                                {{$product->category_name}}
+                            </a>
+                        </li>
+                        <li> {{$product->name}} </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- END Project Info -->
+        </section>
+        <!-- END Project Navigation -->
+
+
+        <!-- Project Info -->
+        <section class="site-content site-section border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 site-block">
+                        <!-- Carousel & Info -->
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <img src="{{URL::to($product->image)}}" itemprop="image" alt="{{$product->name}}" class="img-responsive" itemprop="image">
+                            </div>
+                            <div class="col-sm-4" id="product-content">
+                                <div class="block">
+                                    <h2 id="description"  itemprop="description"> {{ $product->description }} </h2>
+                                    <p><strong class="text-info" tyle="font-size:19px;">Precio: </strong> 
+                                        $<span id="price" itemprop="price">{{ $product->formated_price }}</span>
+                                    </p>
+                                    <p>
+                                        <strong class="text-info">Tallas:  </strong>
+                                        <span id="size"> {{ $product->sizes }} </span>
+                                    </p>     
+                                    <p>
+                                        <strong class="text-info">Referencia:  </strong>
+                                        <span id="ref" itemprop="sku"> {{ $product->id }} </span>
+                                    </p>
+                                    <div class="btn btn-effect-ripple btn-success">
+                                        <i class="fa fa-phone"></i> 313 816 7962
+                                    </div>
+                                    <a href="{{ URL::to('desgargar-producto/'.$product->id) }}" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope="" itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
+                     
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Carousel & Info -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END Project Info -->
+    </div>
 
     <!-- Project Info -->
     <section class="site-content site-section border-bottom">
         <div class="container" id="catalog">
             <div class="row">
                 <div class="col-md-12 site-block">
-                    <h3 class="site-heading h2" style="margin-bottom:35px;">
-                        Productos Relacionados
+                    <h3 class="site-heading h3" style="margin-bottom:35px;">
+                        Más Productos de {{$product->category_name}}
                     </h3>
                     @foreach($product->relatedProducts() as $relatedProduct)
                         <article class="col-md-3 col-sm-4 col-xs-12 thumb">
