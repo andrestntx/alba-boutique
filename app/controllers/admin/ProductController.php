@@ -23,8 +23,9 @@ class ProductController extends \BaseController {
 	public function create()
 	{
 		$product = new Product;
-		$form_data = ['route' => ['admin.store', $product->id], 'method' => 'POST', 'files' => 'true'];
-		return View::make('dashboard.pages.product.form', compact('product', 'form_data'));
+		$categories = Category::lists('name', 'id');
+		$form_data = ['route' => ['admin.productos.store', $product->id], 'method' => 'POST', 'files' => 'true'];
+		return View::make('dashboard.pages.product.form', compact('product', 'categories', 'form_data'));
 	}
 
 	/**
@@ -40,11 +41,11 @@ class ProductController extends \BaseController {
 
 	    if ($product->validAndSave($data))
         {
-            return Redirect::route('admin.index');
+            return Redirect::route('admin.productos.index');
         }
         else
         {
-			return Redirect::route('admin.create')->withInput()->withErrors($product->errors);
+			return Redirect::route('admin.productos.create')->withInput()->withErrors($product->errors);
         }
 	}
 
@@ -70,8 +71,9 @@ class ProductController extends \BaseController {
 	public function edit($id)
 	{
 		$product = Product::findOrFail($id);
-		$form_data = ['route' => ['admin.update', $product->id], 'method' => 'PUT', 'files' => 'true'];
-		return View::make('dashboard.pages.product.form', compact('product', 'form_data'));
+		$categories = Category::lists('name', 'id');
+		$form_data = ['route' => ['admin.productos.update', $product->id], 'method' => 'PUT', 'files' => 'true'];
+		return View::make('dashboard.pages.product.form', compact('product', 'categories', 'form_data'));
  	}
 
 	/**
@@ -88,11 +90,11 @@ class ProductController extends \BaseController {
 
 	    if ($product->validAndSave($data))
         {
-            return Redirect::route('admin.index');
+            return Redirect::route('admin.productos.index');
         }
         else
         {
-			return Redirect::route('admin.edit', $product->id)->withInput()->withErrors($product->errors);
+			return Redirect::route('admin.productos.edit', $product->id)->withInput()->withErrors($product->errors);
         }
 	}
 
@@ -119,7 +121,7 @@ class ProductController extends \BaseController {
         }
         else
         {
-            return Redirect::route('admin.index');
+            return Redirect::route('admin.productos.index');
         }
 	}
 

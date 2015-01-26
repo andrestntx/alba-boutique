@@ -1,8 +1,8 @@
 @extends('dashboard.pages.layout')
 @section('title') Productos @stop
 @section('title_page')
-	Productos 
- 	<a href="{{ route('admin.create') }}" class="btn btn-primary"> 
+	<i class="gi gi-coat_hanger"></i> Productos 
+ 	<a href="{{ route('admin.productos.create') }}" class="btn btn-primary"> 
  		<i class="fa fa-plus"></i> Agregar
 	</a> 
 @stop
@@ -10,7 +10,7 @@
 	<div class="row" id="catalog">
 	    @foreach($products as $product)
 	        <div class="col-md-3 col-sm-4 col-xs-12 thumb">
-	        	<a href="{{ route('admin.edit', $product->id) }}" class="widget">
+	        	<a href="{{ route('admin.productos.edit', $product->id) }}" class="widget">
 		        	<div class="widget">
 						<div class="widget-content widget-content-mini themed-background-muted">
 							<div class="pull-right text-muted">Ref: {{ $product->id }}</div>

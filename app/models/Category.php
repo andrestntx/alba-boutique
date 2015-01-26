@@ -1,38 +1,17 @@
 <?php
 
-class Product extends Eloquent {
+class Category extends Eloquent {
 
-	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible', 'category_id'];
-	protected $autoincrements = false;
-    protected static $path_images = 'img/products/'; 
+	protected $fillable = ['name', 'description', 'visible'];
+	protected $table = 'categories';
+    protected $autoincrements = true;
+	public $timestamp = true;
+	protected static $path_images = 'img/categories/'; 
     protected static $extension_images = '.jpg';
-
-    /* Query */
-    public static function getVisiblePaginate()
-    {
-        return self::whereVisible('1')->orderBy('name')->paginate(8); 
-    }
-    /* End Querys*/
-
-    /* Mutators */
-
-    public function getPriceAttribute()
-    {
-        //Update temporal
-        $this->name_url = strtolower(str_replace(' ', '-', trim($this->name)));
-        $this->category_id = 1;
-        $this->save();
-
-    }
-
-    public function getWholesalePriceAttribute()
-    {
-        return round($this->price - ($this->price * 0.40), -2);  
-    }
 
     public function getShortNameAttribute()
     {
-        return substr($this->name, 0, 15);
+        return substr($this->name, 0, 25);
     }
 
     public function getPathImageAttribute()
@@ -73,21 +52,17 @@ class Product extends Eloquent {
 
     /* End Functions*/
 
-
-    /* Save And Validation */
+     /* Save And Validation */
 	public function isValid($data)
     {
         $rules = array(
-        	'id'	=>	'unique:products',
-            'name'     => 'required|max:100|unique:products',
-            'image' => 'mimes:jpeg,png,bmp|max:1500',
-            'category_id'   => 'required'
+            'name'     => 'required|max:100|unique:categories',
+            'image' => 'mimes:jpeg,png,bmp|max:1500'
         );
 
         if ($this->exists)
         {
-			$rules['id'] .= ',id,'.$this->id.',id';
-            $rules['name'] .= ',name,'.$this->id.',id';
+			$rules['name'] .= ',name,'.$this->id.',id';
         }
         else 
         {
@@ -125,7 +100,7 @@ class Product extends Eloquent {
 
             if(array_key_exists('image', $data))
         	{
-        		$this->uploadImage($data['image'], $data['id']);
+        		$this->uploadImage($data['image'], $this->id);
         	}
           
             return true;

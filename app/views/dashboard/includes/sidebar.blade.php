@@ -15,9 +15,15 @@
             <!-- Sidebar Navigation -->
             <ul class="sidebar-nav">
                 <li>
-                    <a href="{{url('admin')}}">
-                        <i class="fa fa-bar-chart-o sidebar-nav-icon"></i>
+                    <a href="{{url('admin/productos')}}">
+                        <i class="gi gi-coat_hanger sidebar-nav-icon"></i>
                         <span class="sidebar-nav-mini-hide">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('admin/categorias')}}">
+                        <i class="gi gi-fins sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Categorías</span>
                     </a>
                 </li>
             </ul>

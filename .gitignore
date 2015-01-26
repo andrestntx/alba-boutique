@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
 /vendor
 /public/img/products/*.jpg
+/public/img/categories/*.jpg
 composer.phar
 .env.*.php
 .env.php

@@ -32,8 +32,14 @@ Route::post('login', ['as' => 'login', 'uses' => 'AuthController@postLogin']);
 
 Route::group(array('before' => 'auth'), function()
 {
-    Route::resource('admin', 'ProductController');
-    Route::get('logout', 'AuthController@getLogout');
+	Route::group(array('prefix' => 'admin'), function()
+	{
+		Route::get('/', ['uses' => 'AdminController@showWelcome']);
+	    Route::resource('productos', 'ProductController');
+	    Route::resource('categorias', 'CategoryController');
+	});   
+
+	Route::get('logout', 'AuthController@getLogout');
 });
 
 
