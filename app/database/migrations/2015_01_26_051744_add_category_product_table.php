@@ -15,6 +15,7 @@ class AddCategoryProductTable extends Migration {
 		Schema::table('products', function(Blueprint $table)
 		{
 			$table->string('name_url')->nullable();
+			$table->unique('name');
 			$table->integer('category_id')->nullable()->unsigned();
 			$table->foreign('category_id')->references('id')->on('categories');
 		});
@@ -31,6 +32,7 @@ class AddCategoryProductTable extends Migration {
 		{
 			$table->dropForeign('products_category_id_foreign');
 			$table->dropColumn('category_id');
+			$table->dropUnique('products_name_unique');
 			$table->dropColumn('name_url');
 		});
 	}
