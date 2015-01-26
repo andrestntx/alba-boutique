@@ -16,13 +16,9 @@ class Product extends Eloquent {
 
     /* Mutators */
 
-    public function getPriceAttribute()
+    public function setNameAttribute($name)
     {
-        //Update temporal
-        $this->name_url = strtolower(str_replace(' ', '-', trim($this->name)));
-        $this->category_id = 1;
-        $this->save();
-
+        $this->name = trim($name);
     }
 
     public function getWholesalePriceAttribute()
