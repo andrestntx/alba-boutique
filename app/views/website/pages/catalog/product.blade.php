@@ -86,7 +86,7 @@
                                     <div class="btn btn-effect-ripple btn-success">
                                         <i class="fa fa-phone"></i> 313 816 7962
                                     </div>
-                                    <a href="{{ URL::to('desgargar-producto/'.$product->id) }}" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope="" itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
+                                    <a href="{{ URL::to('descargar-producto/'.$product->id) }}" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope="" itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
                      
                                 </div>
                             </div>
