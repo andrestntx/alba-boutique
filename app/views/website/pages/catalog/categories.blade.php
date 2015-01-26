@@ -1,11 +1,11 @@
 @extends('website.layout')
 @section('title') Catálogo de Productos - Alba Boutique @stop
-@section('meta-description') Catálogo de Productos para Mujer. La Ropa Femenina de Moda | Alba Boutique @stop
+@section('meta-description') Catálogo de Productos Alba Boutique. Pijamas para Mujer, Ropa Interior Femenina, Ropa Deportiva para Mujer, Ropa Interior para Hombre @stop
 @section('content')
     <!-- Intro -->
     <section class="site-section site-section-top site-section-light themed-background-dark">
         <div class="container">
-            <h1 class="text-center animation-fadeInQuickInv"><strong>Catálogo de Productos para Hombre y Mujer</strong></h1>
+            <h1 class="text-center animation-fadeInQuickInv"><strong>Catálogo de Productos Alba Boutique</strong></h1>
         </div>
     </section>
     <!-- END Intro -->

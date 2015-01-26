@@ -1,7 +1,4 @@
 @extends('website.layout')
-@section('extra-css')
-
-@stop
 @section('content') 
 	<!-- Intro + Action -->
     <div class="media-promo">
@@ -47,43 +44,6 @@
                     </div>
                 @endforeach
             </div>
-
-            {{-- Regular Fade --}}
-            <article id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" itemscope itemtype="http://schema.org/Product">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h1 class="modal-title h3">
-                                <strong id="name" itemprop="name"></strong>, Ref: <span id="ref" itemprop="sku"></span>
-                            </h1>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-8" id="product-image">
-                                    <img src="" class="img-responsive" itemprop="image">
-                                </div>
-                                <div class="col-md-4" id="product-content">
-                                    <div class="block">
-                                        <h3><strong class="text-info">Precio: </strong> $<span id="price" itemprop="price"></span></h3>
-                                        <h3 style="margin-top:0px;" class="text-info"><strong>Tallas  </strong><span id="size" class="h4"></span></h3>
-                                          
-                                        <p id="description" style="font-size:15px;" itemprop="description"></p>
-                                        <div style="position:absolute; bottom:5px; right:10px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="btn btn-effect-ripple btn-success">
-                                <i class="fa fa-phone"></i> 313 816 7962
-                            </div>
-                            <a href="#" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            {{-- END Regular Fade --}}
         </div>
     </section>
     {{-- END Promo Features --}}
@@ -156,8 +116,4 @@
         </div>
     </section>
     <!-- END Testimonials --> 
-@stop
-
-@section('extra-js')
-    {{ HTML::script('assets/website/js/pages/appCatalog.js') }}
 @stop

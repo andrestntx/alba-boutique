@@ -1,6 +1,6 @@
 @extends('website.layout')
 @section('title') Regalos para tu Pareja - Alba Boutique @stop
-@section('meta-description') ¿No sabes qué regalarle a tu Pareja? - Nostras te asesoramos @stop
+@section('meta-description') ¿No sabes qué regalarle a tu Pareja? - Nostras te asesoramos. Tenemos los productos más lindos que a ella le encantarán @stop
 @section('content')
     <div class="media-promo">
         <section class="media-promo-section">
