@@ -8,7 +8,7 @@
 	
 	{{-- Metas --}}
 	<meta charset="utf-8">
-	<meta name="description" content="@yield('meta-description', 'Alba Boutique: Belleza y Dulzura a la hora de vestir - Ropa para Mujer')">
+	<meta name="description" content="@yield('meta-description', 'Alba Boutique: Venta al Por Mayor y al Detal de hormosa ropa mujer. Compra en nuestra tienda Online, hacemos envíos a todo Colombia')">
   <meta name="keywords" content="Pijamas para Mujer, Pantys, Tangas, Pijamas al por mayor, Tienda Online Mujer, Ropa interior femenina, Ropa intima">
   <meta name="author" content="Alba Boutique">
   <meta name="robots" content="index, follow">
