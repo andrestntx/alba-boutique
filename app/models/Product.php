@@ -61,7 +61,7 @@ class Product extends Eloquent {
 
     public function getShortNameAttribute()
     {
-        return substr($this->name, 0, 20);
+        return substr($this->name, 0, 25);
     }
 
     public function getPathImageAttribute()
@@ -82,7 +82,7 @@ class Product extends Eloquent {
 
     public function getSmallImageAttribute()
     {
-        $this->updateImage(250, $this->path_small_image);
+        $this->widenImage(320, $this->path_small_image);
         return $this->path_small_image;
     }
 

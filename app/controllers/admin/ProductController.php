@@ -10,7 +10,7 @@ class ProductController extends \BaseController {
 	 */
 	public function index()
 	{
-		$products = Product::paginate(8); 
+		$products = Product::orderBy('category_id', 'name')->paginate(9); 
 		return View::make('dashboard.pages.product.lists', compact('products'));
 	}
 
