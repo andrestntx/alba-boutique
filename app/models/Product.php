@@ -141,7 +141,7 @@ class Product extends Eloquent {
 
     public function getWholesalePriceAttribute()
     {
-        return round($this->price - ($this->price * 0.40), -2);  
+        return round($this->sale_price - ($this->sale_price * 0.40), -2);  
     }
 
     public function getShortNameAttribute()
