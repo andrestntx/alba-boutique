@@ -57,7 +57,7 @@
         <div class="container" id="catalog">
             <div class="row row-items">
                 @foreach($category->products as $product)
-                    <article class="col-md-3 col-sm-4 col-xs-12 thumb">
+                    <article class="col-sm-4 col-xs-12 thumb">
                         <div class="widget" itemscope itemtype="http://schema.org/Product">
                             <div class="widget-content widget-content-mini themed-background-muted">
                                 <div class="pull-right text-muted"><span itemprop="price"> $ {{ $product->formated_price }} </span></div>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="widget-content text-center">
                                 <a href="{{ route('catalogo.producto', array($category->name_url, $product->name_url)) }}">
-                                    <div class="thumbnail" style="height:200px; overflow:hidden; margin-bottom:0px;" itemprop="image">
+                                    <div class="thumbnail" style="height:230px; overflow:hidden; margin-bottom:0px;" itemprop="image">
                                         <img class="img-responsive" src="{{URL::to($product->small_image)}}" alt="Producto: {{$product->name}} | Alba Boutique" title="Producto: {{$product->name}} | Alba Boutique"/>
                                     </div>
                                 </a>
