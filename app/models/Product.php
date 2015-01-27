@@ -156,7 +156,7 @@ class Product extends Eloquent {
 
     public function getImageAttribute()
     {
-        $this->widenImage(560, $this->path_image);
+        $this->updateImage(560, $this->path_image);
         return $this->path_image;      
     }
 
@@ -167,7 +167,7 @@ class Product extends Eloquent {
 
     public function getSmallImageAttribute()
     {
-        $this->widenImage(320, $this->path_small_image);
+        $this->updateImage(320, $this->path_small_image);
         return $this->path_small_image;
     }
 
