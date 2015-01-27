@@ -25,9 +25,10 @@
 @section('meta-description') {{ $category->description }} | Alba Boutique @stop
 @section('content')
     <!-- Intro -->
-    <section class="site-section site-section-top site-section-light themed-background-dark">
+    <section class="site-section site-section-top site-section-light themed-background-dark" style="padding-top:110px;">
         <div class="container">
             <h1 class="text-center animation-fadeInQuickInv"><strong>Catálogo de {{ $category->name }}</strong></h1>
+            <p class="text-center animation-fadeInQuickInv col-md-10 col-md-offset-1" style="margin-bottom:0px; font-size:17px; "> {{ $category->description }}</p>
         </div>
     </section>
     <!-- END Intro -->
