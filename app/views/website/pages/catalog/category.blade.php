@@ -57,7 +57,7 @@
         <div class="container" id="catalog">
             <div class="row row-items">
                 @foreach($category->products as $product)
-                    <article class="col-sm-4 col-xs-12 thumb">
+                    <article class="col-md-4 col-sm-6 col-xs-12 thumb">
                         <div class="widget" itemscope itemtype="http://schema.org/Product">
                             <div class="widget-content widget-content-mini themed-background-muted">
                                 <div class="pull-right text-muted"><span itemprop="price"> $ {{ $product->formated_price }} </span></div>
