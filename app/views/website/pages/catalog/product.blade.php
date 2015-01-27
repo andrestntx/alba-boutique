@@ -73,7 +73,7 @@
                                 <div class="block">
                                     <h2 id="description"  itemprop="description"> {{ $product->description }} </h2>
                                     <p><strong class="text-info" tyle="font-size:19px;">Precio: </strong> 
-                                        $<span id="price" itemprop="price">{{ $product->formated_price }}</span>
+                                        $<span id="price" itemprop="price">{{ $product->formated_sale_price }}</span>
                                     </p>
                                     <p>
                                         <strong class="text-info">Tallas:  </strong>

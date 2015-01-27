@@ -25,6 +25,60 @@ class Category extends Eloquent {
         return self::whereVisible('1')->get();
     }
 
+    public function isLingerie()
+    {
+        if($this->id == 1)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isMenUnderwear()
+    {
+        if($this->id == 2)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isFemaleSportswear()
+    {
+        if($this->id == 3)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isSwimwear()
+    {
+        if($this->id == 4)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isGirdle()
+    {
+        if($this->id == 5)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isPijama()
+    {
+        if($this->id == 6)
+        {
+            return true;
+        }
+        return false;
+    }
+
     /* End Querys */
 
     public function getShortNameAttribute()

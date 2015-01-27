@@ -7,6 +7,11 @@ class Product extends Eloquent {
     protected static $path_images = 'img/products/'; 
     protected static $extension_images = '.jpg';
 
+    /* Relations */
+    public function category()
+    {
+        return $this->belongsTo('Category', 'category_id', 'id');
+    }
     /* Query */
     public static function getVisiblePaginate()
     {
@@ -48,6 +53,86 @@ class Product extends Eloquent {
     /* End Querys*/
 
     /* Mutators */
+    public function getFormatedSalePriceAttribute()
+    {
+        return number_format($this->sale_price, 0);
+    }
+
+    public function getSalePriceAttribute()
+    {
+        if ($this->category->isLingerie()) 
+        {
+            if($this->price <= 5000)
+            {
+                return $this->price * 3;
+            }
+            elseif($this->price > 5000 && $this->price <= 6000)
+            {
+                return $this->price * 2.75;
+            }
+            elseif($this->price > 6000 && $this->price <= 7500)
+            {
+                return $this->price * 2.5;
+            }
+            else
+            {
+                return $this->price * 2.16;
+            }
+        }
+        elseif($this->category->isPijama())
+        {
+            if($this->price < 20000)
+            {
+                return $this->price * 2.5;
+            }
+            elseif($this->price >= 20000 && $this->price < 22000)
+            {
+                return $this->price * 2.4;
+            }
+            else
+            {
+                return $this->price * 2.27;
+            }
+        }
+        elseif ($this->category->isMenUnderwear()) 
+        {
+            if($this->price < 8000)
+            {
+                return $this->price * 2.16;
+            }
+            elseif($this->price >= 8000 && $this->price <= 10000)
+            {
+                return 18000;
+            }
+            else
+            {
+                return $this->price * 2;
+            }
+        }
+        elseif ($this->category->isFemaleSportswear()) 
+        {
+            if($this->price <= 30000)
+            {
+                return $this->price * 2.2;
+            }
+            elseif($this->price > 30000 && $this->price <= 40000)
+            {
+                return $this->price * 1.9;
+            }
+            elseif($this->price > 40000 && $this->price <= 50000)
+            {
+                return $this->price * 1.75;
+            }
+            else
+            {
+                return $this->price * 1.7;
+            }
+        }
+        elseif ($this->category->isGirdle() || $this->category->isSwimwear()) 
+        {
+            return $this->price * 1.72;
+        }
+    }
 
     public function getFormatedPriceAttribute()
     {
@@ -61,7 +146,7 @@ class Product extends Eloquent {
 
     public function getShortNameAttribute()
     {
-        return substr($this->name, 0, 25);
+        return substr($this->name, 0, 30);
     }
 
     public function getPathImageAttribute()
