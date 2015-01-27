@@ -175,16 +175,11 @@ class Product extends Eloquent {
 
 
     /* Functions */
-    public function widenImage($width, $path, $id = null)
+    public function widenImage($width, $path, $id)
     {
-        if(is_null($id))
+        if(File::exists(self::$path_images . $id . self::$extension_images))
         {
-            $id = $this->id;
-        }
-
-        if(File::exists(self::$path_images . $this->id . self::$extension_images))
-        {
-            $image = Image::make(self::$path_images . $this->id . self::$extension_images);
+            $image = Image::make(self::$path_images . $id . self::$extension_images);
             $image->widen($width);
             $image->save($path);
         }
@@ -195,7 +190,7 @@ class Product extends Eloquent {
     {
         if($this->exists && !File::exists($path))
         {
-            $this->widenImage($width, $path);
+            $this->widenImage($width, $path, $this->id);
         }
     }
 

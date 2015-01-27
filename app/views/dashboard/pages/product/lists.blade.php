@@ -12,7 +12,7 @@
 	        <div class="col-md-4 col-sm-6 col-xs-12 thumb">
 	        	<a href="{{ route('admin.productos.edit', $product->id) }}" class="widget">
 		        	<div class="widget">
-						<div class="widget-content widget-content-mini themed-background-muted">
+						<div class="widget-content widget-content-mini themed-background-muted" style="height:35px; overflow: hidden;">
 							<div class="pull-right text-muted">Ref: {{ $product->id }}</div>
 							<i class="fa fa-heart"></i> {{ $product->short_name }}
 						</div>
