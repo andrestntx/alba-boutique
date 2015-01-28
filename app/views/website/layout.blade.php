@@ -15,7 +15,8 @@
             <div class="container">
                 <!-- Site Logo -->
                 <a href="{{URL::to('/')}}" class="site-logo" itemprop="relatedLink">
-                    <i class="fa fa-heart"></i> Alba<strong> Boutique</strong>
+                    <img src="{{URL::to('img/alba_boutique_logo.png')}}" style="width:195px; margin-top:-4px;" class="hidden-xs">
+                    <img src="{{URL::to('img/alba_boutique_logo_2.png')}}" style="width:110px;" class="visible-xs">
                 </a>
                 <!-- END Site Logo -->               
 
@@ -79,7 +80,6 @@
                         </ul>
                         <h4 class="footer-heading">Nuestras Redes Sociales</h4>
                         <ul class="footer-nav footer-nav-links list-inline">
-                            <a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher">Google+</a>
                             <li><a href="https://www.facebook.com/ModaFemeninaCo" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/albaboutique" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
                             <li><a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i> Google+</a></li>

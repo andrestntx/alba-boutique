@@ -12,7 +12,7 @@
                 </h1>
                 <h1 style="float:right;">
                     <strong>
-                        <img src="{{URL::to('img/whatsaap.png')}}" style="width:45px;" class="whatsaap">313 816 7962
+                        <img src="{{ URL::to('img/whatsaap.png')}}" style="width:45px;" class="whatsaap">313 816 7962
                     </strong>
                 </h1>
             </div>
