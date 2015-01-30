@@ -243,7 +243,10 @@ class Product extends Eloquent {
             }
 
             $this->fill($data);
-            $this->name_url = strtolower(str_replace(' ', '-', trim($data['name'])));
+            if(!$this->exists)
+            {
+                $this->name_url = strtolower(str_replace(' ', '-', trim($data['name'])));
+            }
             $this->save();
 
             if(array_key_exists('image', $data))

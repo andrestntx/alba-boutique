@@ -30,4 +30,24 @@ class HomeController extends BaseController {
 	{
 		return View::make('website.pages.wholesale');
 	}
+
+	public function showWholesalePijamas()
+	{
+		$category = Category::find(6);
+		$category->load('products');
+
+		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'));
+	}
+
+	public function postContactWholesalePijamas()
+	{
+		$data = Input::all();
+		ContactMessage::create($data);		
+
+		$category = Category::find(6);
+		$category->load('products');
+
+		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'))->with('message', 'Gracias. Hemos Recibido tu Mensaje. Pronto te Llámaremos');
+
+	}
 }

@@ -66,6 +66,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							{{ Form::label('name_url', 'URL', ['class' => 'col-md-3 control-label']) }}
+							<div class="col-md-8">
+								{{ Form::text('name_url', null, ['class' => 'form-control', 'disabled' => 'disabled']) }}
+							</div>
+						</div>
+						<div class="form-group">
 							{{ Form::label('name', 'Nombre', ['class' => 'col-md-3 control-label']) }}
 							<div class="col-md-8">
 								{{ Form::text('name', null, ['class' => 'form-control']) }}

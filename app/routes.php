@@ -22,6 +22,8 @@ Route::get('/', ['as' => '/', 'uses' => 'HomeController@showWelcome']);
 
 Route::get('regalos', ['as' => 'regalos', 'uses' => 'HomeController@showGift']);
 Route::get('ventas-al-por-mayor', ['as' => 'ventas-al-por-mayor', 'uses' => 'HomeController@showWholesale']);
+Route::get('venta-de-pijamas-al-por-mayor', ['as' => 'venta-de-pijamas-al-por-mayor', 'uses' => 'HomeController@showWholesalePijamas']);
+Route::post('venta-de-pijamas-al-por-mayor', ['as' => 'venta-de-pijamas-al-por-mayor.post', 'uses' => 'HomeController@postContactWholesalePijamas']);
 Route::resource('catalogo', 'CatalogController');
 Route::get('catalogo/{category}/{product}', ['as' => 'catalogo.producto', 'uses' => 'CatalogController@showProduct']);
 

@@ -24,7 +24,7 @@
         }
     </style>
 @stop
-@section('title') Producto {{ $product->name }} | Alba Boutique @stop
+@section('title') {{ $product->name }} | Alba Boutique @stop
 @section('meta-description') {{ $product->description }} | Alba Boutique @stop
 @section('content')
     <div itemscope itemtype="http://schema.org/Product">

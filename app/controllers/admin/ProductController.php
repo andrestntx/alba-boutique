@@ -37,7 +37,7 @@ class ProductController extends \BaseController {
 	public function store()
 	{
 		$product = new Product;
-		$data = Input::all();
+		$data = array_map('trim',Input::all());
 
 	    if ($product->validAndSave($data))
         {
@@ -86,8 +86,8 @@ class ProductController extends \BaseController {
 	public function update($id)
 	{
 		$product = Product::findOrFail($id);
-		$data = Input::all();
-
+		$data = array_map('trim',Input::all());
+	    
 	    if ($product->validAndSave($data))
         {
             return Redirect::route('admin.productos.index');
