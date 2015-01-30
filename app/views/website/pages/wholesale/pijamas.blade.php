@@ -38,10 +38,12 @@
                     <div id="project-carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner text-center">
+                            <?php $count=1; ?>
                             @foreach($category->products as $pijama)
-                                <div class="active item">
+                                <div class="@if($count == 1) active @endif item">
                                     <img src="{{URL::to($pijama->image)}}" alt="{{$pijama->name}}">
                                 </div>
+                                <?php $count++; ?>
                             @endforeach
                         </div>
                         <!-- END Wrapper for slides -->
