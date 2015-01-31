@@ -15,10 +15,10 @@
     <section class="site-section site-content border-bottom overflow-hidden">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 clearfix push">
+                <div class="col-sm-6 clearfix">
                     <img style="max-width: 600px; margin-left: -150px;" data-element-offset="200" data-animation-class="animation-fadeInRight" data-toggle="animation-appear" class="img-responsive pull-left animation-fadeInRight" alt="" src="{{URL::to('img/placeholders/photos/ventas_al_por_mayor_2.jpg')}}">
                 </div>
-                <div class="col-sm-6 push">
+                <div class="col-sm-6">
                     <h2 class="site-heading"><strong>Un gran producto para tu negocio</strong></h2>
                     <p class="feature-text" style="margin-bottom:20px;">
                         Nuestras prendas se venden muy fácil. Su calidad, estilo diferente y buen precio hace que los cliente compren con confianza. En <strong>Alba Boutique</strong> manejamos Pijamas para mujer, Ropa interior femenina, Ropa interior masculina y Ropa Deportiva.
