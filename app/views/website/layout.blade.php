@@ -65,7 +65,7 @@
                 <!-- Footer Links -->
                 <div class="row">
                     <div class="col-sm-4">
-                        <h4 class="footer-heading">Alba Boutique</h4>
+                        <p class="footer-heading h4">Alba Boutique</p>
                         <ul class="footer-nav ul-breath list-unstyled">
                             <li><a href="javascript:void(0)">Quienes Somos</a></li>
                             <li><a href="javascript:void(0)">Nosotros</a></li>
@@ -73,12 +73,12 @@
                         </ul>
                     </div>
                     <div class="col-sm-4">
-                        <h4 class="footer-heading">Necesitas Ayuda?</h4>
+                        <p class="footer-heading h4">Necesitas Ayuda?</p>
                         <ul class="footer-nav footer-nav-links list-inline">
                             <li><a href="javascript:void(0)"><i class="fa fa-fw fa-book"></i> Guía de Compras</a></li>
                             <li><a href="javascript:void(0)"><i class="fa fa-fw fa-support"></i> FAQ</a></li>
                         </ul>
-                        <h4 class="footer-heading">Nuestras Redes Sociales</h4>
+                        <p class="footer-heading h4">Nuestras Redes Sociales</p>
                         <ul class="footer-nav footer-nav-links list-inline">
                             <li><a href="https://www.facebook.com/ModaFemeninaCo" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/albaboutique" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
