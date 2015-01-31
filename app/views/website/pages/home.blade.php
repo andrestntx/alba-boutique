@@ -12,7 +12,7 @@
                 </h1>
                 <p class="h1" style="float:right;">
                     <strong>
-                        <img src="{{ URL::to('img/whatsaap.png')}}" style="width:45px;" class="whatsaap">313 816 7962
+                        <img src="{{ URL::to('img/whatsaap.png')}}" alt="logo de whatsapp - Alba Boutique" style="width:45px;" class="whatsaap">313 816 7962
                     </strong>
                 </p>
             </div>
@@ -34,7 +34,7 @@
                     <div class="col-md-4 col-sm-6 text-center">
                         <a href="{{route('catalogo.show', $category->name_url)}}" class="post">
                             <div class="post-image" style="height:280px;">
-                                <img src="{{URL::to($category->image)}}" alt="" class="img-responsive">
+                                <img src="{{URL::to($category->image)}}" alt="{{$category->name}}" class="img-responsive">
                             </div>
                             <h2 class="h3">
                                 <strong class="text-info">{{$category->name}}</strong>
