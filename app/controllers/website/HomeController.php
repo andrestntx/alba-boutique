@@ -33,7 +33,7 @@ class HomeController extends BaseController {
 
 	public function showWholesalePijamas()
 	{
-		$category = Category::find(6);
+		$category = Category::find(2);
 		$category->load('products');
 
 		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'));

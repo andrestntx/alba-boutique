@@ -25,16 +25,16 @@
 @stop
 @section('content')
     <!-- Intro -->
-    <section class="site-section site-section-top site-section-light themed-background-dark" style="padding: 90px 0 20px 0;">
+    <section class="site-section site-section-top site-section-light themed-background-dark" style="padding: 90px 0 5px 0;">
         <div class="container text-center">
             <h1 class="animation-fadeInQuickInv"><strong>Venta de Pijamas al por Mayor</strong></h1>
         </div>
     </section>
     <!-- END Intro -->
-    <section class="site-section site-content border-bottom overflow-hidden">
+    <section class="site-section site-content border-bottom overflow-hidden" style="padding-top:40px;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 clearfix push">
+                <div class="col-sm-6 clearfix">
                     <div id="project-carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner text-center">
@@ -71,7 +71,7 @@
                         Realizando una compra mínima de $400.000 ya te damos precio al por mayor. Puedes comprar en las Tallas y colores que desees. Hacemos envíos a todo Colombia.
                     </p>
                     <p style="font-size:1.8em; margin:15px 0;"><i class="fa fa-phone"></i> Déjanos tus datos y nosotros te llamamos</p>
-                    {{ Form::open(['route' => 'venta-de-pijamas-al-por-mayor.post', 'method' => 'POST', 'id' => 'form-contact', 'class' => 'form-inline']) }}
+                    {{ Form::open(['route' => 'venta-de-pijamas-al-por-mayor.post', 'method' => 'POST', 'id' => 'form-contact', 'class' => 'form-inline text-center']) }}
                         <div class="form-group">
                             <label for="name" class="sr-only">Nombre</label>
                             {{Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Tu Nombre', 'required'])}}

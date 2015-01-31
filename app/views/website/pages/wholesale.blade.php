@@ -32,6 +32,16 @@
             </div>
         </div>
     </section>
+    <section class="site-content site-section border-bottom themed-background-muted" style="padding-top:20px;">
+        <div class="container">
+            <div class="row row-items">
+                <div class="col-md-4">
+                    <h3><a href="{{URL::to('venta-de-pijamas-al-por-mayor')}}">Venta de Pijamas al Por Mayor</a></h3>
+                    <img class="img-responsive" alt="Venta de Pijamas al por Mayor - Alba Boutique" src="img/placeholders/photos/venta-pijamas-al-por-mayor.jpg" style="margin: 0 auto;">
+                </div>
+            </div>
+        </div>
+    </section>
 @stop
 @section('extra-js')
 
