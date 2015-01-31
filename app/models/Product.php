@@ -201,10 +201,10 @@ class Product extends Eloquent {
 	public function isValid($data)
     {
         $rules = array(
-        	'id'	=>	'unique:products',
-            'name'     => 'required|max:100|unique:products',
-            'image' => 'mimes:jpeg,png,bmp|max:1500',
-            'category_id'   => 'required'
+        	'id'           => 'unique:products',
+            'name'         => 'required|max:100|unique:products',
+            'image'        => 'mimes:jpeg,png,bmp|max:1500',
+            'category_id'  => 'required'
         );
 
         if ($this->exists)
@@ -242,7 +242,7 @@ class Product extends Eloquent {
                 $data['visible'] = 0;
             }
 
-            $this->fill($data);
+            $this->fill(array_map('trim',$data));
             if(!$this->exists)
             {
                 $this->name_url = strtolower(str_replace(' ', '-', trim($data['name'])));

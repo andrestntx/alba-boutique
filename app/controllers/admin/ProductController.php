@@ -37,7 +37,7 @@ class ProductController extends \BaseController {
 	public function store()
 	{
 		$product = new Product;
-		$data = array_map('trim',Input::all());
+		$data = Input::all();
 
 	    if ($product->validAndSave($data))
         {
@@ -86,7 +86,7 @@ class ProductController extends \BaseController {
 	public function update($id)
 	{
 		$product = Product::findOrFail($id);
-		$data = array_map('trim',Input::all());
+		$data = Input::all();
 	    
 	    if ($product->validAndSave($data))
         {
