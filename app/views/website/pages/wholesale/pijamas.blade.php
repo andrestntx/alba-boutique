@@ -87,11 +87,11 @@
                         </div>
                     {{Form::close()}}
                     <ul class="footer-nav footer-nav-links list-inline text-center" style="margin-top:16px;">
-                        <li><a href="https://www.facebook.com/ModaFemeninaCo" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/albaboutique" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-                        <li><a href="https://plus.google.com/+AlbaBoutiquevillavicencio" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i> </a></li>
-                        <li><a href="http://es.pinterest.com/nuestramarca/alba-boutique-tienda-online/" class="social-pinterest" data-toggle="tooltip" title="Siguenos en Pinterest"><i class="fa fa-fw fa-pinterest"></i></a></li>
-                        <li><a href="http://instagram.com/albaboutiques" class="social-instagram" data-toggle="tooltip" title="Siguenos en Instagram"><i class="fa fa-fw fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/ModaFemeninaCo" target="_blank" class="social-facebook" data-toggle="tooltip" title="Siguenos en Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/albaboutique" target="_blank" class="social-twitter" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/+AlbaBoutiquevillavicencio" target="_blank" rel="publisher" class="social-google-plus" data-toggle="tooltip" title="Siguenos en Google Plus"><i class="fa fa-fw fa-google-plus"></i> </a></li>
+                        <li><a href="http://es.pinterest.com/nuestramarca/alba-boutique-tienda-online/" class="social-pinterest" data-toggle="tooltip" title="Siguenos en Pinterest" target="_blank"><i class="fa fa-fw fa-pinterest"></i></a></li>
+                        <li><a href="http://instagram.com/albaboutiques" class="social-instagram" data-toggle="tooltip" title="Siguenos en Instagram" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
                     </ul>
                     @if(isset($message))
                         <div class="alert alert-info alert-dismissable" style="margin-top:15px;">

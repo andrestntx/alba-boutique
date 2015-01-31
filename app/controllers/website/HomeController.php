@@ -47,7 +47,7 @@ class HomeController extends BaseController {
 		$category = Category::find(6);
 		$category->load('products');
 
-		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'))->with('message', 'Gracias. Hemos Recibido tu Mensaje. Pronto te Llámaremos');
+		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'))->with('message', 'Gracias. Hemos Recibido tu Mensaje. Pronto te Llamaremos');
 
 	}
 }
