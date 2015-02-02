@@ -111,7 +111,7 @@
                         <article class="col-md-3 col-sm-4 col-xs-12 thumb">
                             <div class="widget" itemscope itemtype="http://schema.org/Product">
                                 <div class="widget-content widget-content-mini themed-background-muted">
-                                    <div class="pull-right text-muted"><span itemprop="price"> $ {{ $relatedProduct->formated_price }} </span></div>
+                                    <div class="pull-right text-muted"><span itemprop="price"> $ {{ $relatedProduct->formated_sale_price }} </span></div>
                                     <i class="fa fa-heart"></i> <span itemprop="name">{{ $relatedProduct->short_name }} </span>
                                 </div>
                                 <div class="widget-content text-center">
