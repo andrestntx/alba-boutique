@@ -26,6 +26,12 @@
                         <span class="sidebar-nav-mini-hide">Categorías</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{url('admin/mensajes')}}">
+                        <i class="gi gi-envelope sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Mensajes</span>
+                    </a>
+                </li>
             </ul>
             <!-- END Sidebar Navigation -->
         </div>

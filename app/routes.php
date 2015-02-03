@@ -45,6 +45,8 @@ Route::group(array('before' => 'auth'), function()
 		Route::get('/', ['uses' => 'AdminController@showWelcome']);
 	    Route::resource('productos', 'ProductController');
 	    Route::resource('categorias', 'CategoryController');
+
+	    Route::get('mensajes', ['uses' => 'MessagesController@index']);
 	});   
 
 	Route::get('logout', 'AuthController@getLogout');
