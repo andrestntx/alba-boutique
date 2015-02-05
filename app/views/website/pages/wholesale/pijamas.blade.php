@@ -77,11 +77,14 @@
                             {{Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Tu Nombre', 'required', 'style' => 'border-color: #7dc402;'])}}
                         </div>
                         <div class="form-group">
-                            <label for="tel" class="sr-only">Nombre</label>
+                            <label for="tel" class="sr-only">Teléfono</label>
                             {{Form::text('tel', null, ['class' => 'form-control', 'placeholder' => 'Número de Teléfono', 'required', 'style' => 'border-color: #7dc402;'])}}
                         </div>
+                        <div class="form-group">
+                            <label for="tel" class="sr-only">Correo Electrónico</label>
+                            {{Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Correo Electrónico', 'required', 'style' => 'border-color: #7dc402;'])}}
+                        </div>
                         {{Form::hidden('text', 'Contacto de Pijamas al por mayor')}}
-                        {{Form::hidden('email', 'sinemail@gmil.com')}}
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" style="background-color: #7dc402; border-color:#7dc402; color: #fff !important;">Si, Quiero Información!</button>
                         </div>
