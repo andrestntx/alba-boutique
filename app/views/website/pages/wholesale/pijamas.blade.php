@@ -64,11 +64,17 @@
                 </div>
                 <div class="col-sm-6">
                     <h2 class="site-heading" style="font-size:2em;"><i class="fa fa-truck"></i> Compra nuestras Pijamas al por Mayor</h2>
+                    @if(isset($message))
+                        <div class="alert alert-info alert-dismissable" style="margin-top:15px;">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <p><strong>{{ $message }}</strong></p>
+                        </div>
+                    @endif
                     <p class="feature-text" style="margin-bottom:15px;">
                         Si tienes un negocio de productos para Mujer o si te gusta venderles de todo a tus amigas, esta oferta es para ti :). En Alba Boutique te damos excelentes precios y descuentos para tu Negocio.
                     </p>
                     <p class="feature-text">
-                        Realizando una compra mínima de $400.000 ya te damos precio al por mayor. Puedes comprar en las Tallas y colores que desees. Hacemos envíos a todo Colombia.
+                        Realizando una compra de 6 Pijamas ya te damos precio al por mayor. Puedes comprar en las Tallas y Colores que desees. Hacemos envíos a todo Colombia.
                     </p>
                     <p style="font-size:1.8em; margin:15px 0;"><i class="fa fa-phone"></i> Déjanos tus datos y nosotros te llamamos</p>
                     {{ Form::open(['route' => 'venta-de-pijamas-al-por-mayor.post', 'method' => 'POST', 'id' => 'form-contact', 'class' => 'form-inline text-center']) }}
