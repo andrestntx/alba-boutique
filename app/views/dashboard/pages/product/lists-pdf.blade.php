@@ -3,11 +3,11 @@
 	<title></title>
 	<style type="text/css">
 		@page {
-			margin-top: 120px;
+			margin-top: 130px;
 		}
 		header {
 			position:fixed; 
-			margin-top: -100px;
+			margin-top: -120px;
 		}
 		header figure#logo{
 			width: 100%;
@@ -21,8 +21,13 @@
 			width: 100%;
 			display: block;
 		}
+		.category h2
+		{
+			font-size: 30px;
+			margin-top: 0px;
+		}
 		.product {
-			margin: 0 5% 30px 5%;
+			margin: 0 5% 40px 5%;
 		}
 		.product .product-img, .product .product-info{
 			display: inline-block;
@@ -50,7 +55,7 @@
 		}
 		.product .product-img img{
 			max-width: 90%;
-			max-height: 400px;
+			max-height: 390px;
 		}
 
 	</style>
