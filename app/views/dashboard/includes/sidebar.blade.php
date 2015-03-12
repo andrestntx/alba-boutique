@@ -15,10 +15,14 @@
             <!-- Sidebar Navigation -->
             <ul class="sidebar-nav">
                 <li>
-                    <a href="{{url('admin/productos')}}">
-                        <i class="gi gi-coat_hanger sidebar-nav-icon"></i>
-                        <span class="sidebar-nav-mini-hide">Productos</span>
-                    </a>
+                    <a href="#" class="sidebar-nav-menu"><span class="sidebar-nav-ripple animate" style="height: 220px; width: 220px; top: -85px; left: 48px;"></span><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-cc-mastercard sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Productos</span></a>
+                    <ul>
+                        @foreach($categoriesMenu as $category)
+                            <li>
+                                <a href="{{route('admin.categorias.productos.index', $category->id)}}">{{$category->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </li>
                 <li>
                     <a href="{{url('admin/categorias')}}">

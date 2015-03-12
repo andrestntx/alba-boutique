@@ -13,7 +13,7 @@ var formProducts = function() {
              */
 
             /* Initialize Form Validation */
-            $('#form-products').validate({
+            $('#form-categories').validate({
                 errorClass: 'help-block animation-pullUp', // You can change the animation class for a different entrance animation - check animations page
                 errorElement: 'div',
                 errorPlacement: function(error, e) {
@@ -35,20 +35,12 @@ var formProducts = function() {
                     'description': {
                         required: true
                     },
-                    'price': {
+                    'wholesale_gain': {
                         required: true,
                         number: true
                     },
-                    'sizes': {
-                        required: true
-                    },
-                    'id': {
-                        required: true
-                    },
-                    'wholesale_gain': {
-                        number: true
-                    },
                     'sale_gain': {
+                        required: true,
                         number: true
                     }
                 },
@@ -59,20 +51,12 @@ var formProducts = function() {
                     'description': {
                         required: 'Por favor complete este campo'
                     },
-                    'price': {
-                        required: 'Por favor complete este campo',
-                        number: 'El precio debe ser un número'
-                    },
-                    'sizes': {
-                        required: 'Por favor complete este campo'
-                    },
-                    'id': {
-                        required: 'Por favor complete este campo'
-                    },
                     'wholesale_gain': {
+                        required: 'Por favor complete este campo',
                         number: 'Debe ser un número'
                     },
                     'sale_gain': {
+                        required: 'Por favor complete este campo',
                         number: 'Debe ser un número'
                     }
                 }

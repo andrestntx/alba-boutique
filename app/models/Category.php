@@ -2,7 +2,7 @@
 
 class Category extends Eloquent {
 
-	protected $fillable = ['name', 'description', 'visible'];
+	protected $fillable = ['name', 'description', 'visible', 'wholesale_gain', 'sale_gain'];
 	protected $table = 'categories';
     protected $autoincrements = true;
 	public $timestamp = true;
@@ -25,61 +25,17 @@ class Category extends Eloquent {
         return self::whereVisible('1')->get();
     }
 
-    public function isLingerie()
-    {
-        if($this->id == 1)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public function isMenUnderwear()
-    {
-        if($this->id == 2)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public function isFemaleSportswear()
-    {
-        if($this->id == 3)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public function isSwimwear()
-    {
-        if($this->id == 4)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public function isGirdle()
-    {
-        if($this->id == 5)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public function isPijama()
-    {
-        if($this->id == 6)
-        {
-            return true;
-        }
-        return false;
-    }
-
     /* End Querys */
+
+    public function getFormNameAttribute()
+    {
+        if($this->exists)
+        {
+            return $this->name;
+        }
+
+        return 'Nueva Categoría';
+    }
 
     public function getShortNameAttribute()
     {
@@ -141,7 +97,9 @@ class Category extends Eloquent {
     {
         $rules = array(
             'name'     => 'required|max:100|unique:categories',
-            'image' => 'mimes:jpeg,png,bmp|max:1500'
+            'image' => 'mimes:jpeg,png,bmp|max:1500',
+            'wholesale_gain'    => 'required|integer',
+            'sale_gain'         => 'required|integer'
         );
 
         if ($this->exists)

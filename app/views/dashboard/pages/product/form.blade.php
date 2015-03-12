@@ -1,14 +1,14 @@
 @extends('dashboard.pages.layout')
 @section('class_icon_page') gi gi-coat_hanger @stop
 @section('title') 
-	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
+	{{ $category->name }} - @if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
 @stop
 @section('title_page') 
-	@if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
+	{{ $category->name }} - @if($product->exists) Producto: {{ $product->id }} @else Nuevo Producto @endif 
 @stop
 @section('breadcrumbs')
 	@if($product->exists)
-		{{ Form::open(['route' => ['admin.productos.destroy', $product->id], 'method' => 'DELETE', 'style' => 'position:relative; float:right; vertical-align: middle;']) }}
+		{{ Form::open(['route' => ['admin.categorias.productos.destroy', $category->id, $product->id], 'method' => 'DELETE', 'style' => 'position:relative; float:right; vertical-align: middle;']) }}
 			<button type="submit" class="btn btn-effect-ripple btn-danger">
 				<i class="gi gi-skull"></i> Eliminar
 			</button>
@@ -20,6 +20,7 @@
 	<div class="row">
 
 		{{ Form::model($product, $form_data + ['id' => 'form-products']) }}
+			{{ Form::hidden('category_id', $category->id) }}
 			<div class="col-md-6 col-md-offset-3">
 				<!-- END Validation Wizard Content -->
                 @include('dashboard.includes.alerts')
@@ -60,12 +61,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{{ Form::label('category_id', 'Categoría', ['class' => 'col-md-3 control-label']) }}
-							<div class="col-md-8">
-								{{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'required' => 'required']) }}
-							</div>
-						</div>
-						<div class="form-group">
 							{{ Form::label('name_url', 'URL', ['class' => 'col-md-3 control-label']) }}
 							<div class="col-md-8">
 								{{ Form::text('name_url', null, ['class' => 'form-control', 'disabled' => 'disabled']) }}
@@ -90,9 +85,30 @@
 							</div>
 						</div>
 						<div class="form-group">
-							{{ Form::label('price', 'Precio', ['class' => 'col-md-3 control-label']) }}
+							{{ Form::label('price', 'Costo', ['class' => 'col-md-3 control-label']) }}
 							<div class="col-md-8">
-								{{ Form::text('price', null, ['class' => 'form-control']) }}
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-dollar"></i> </span>
+									{{ Form::number('price', null, ['class' => 'form-control']) }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							{{ Form::label('wholesale_gain', 'Por mayor', ['class' => 'col-md-3 control-label']) }}
+							<div class="col-md-8">
+								<div class="input-group">
+									{{ Form::number('wholesale_gain', null, ['class' => 'form-control']) }}
+									<span class="input-group-addon"> % </span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							{{ Form::label('sale_gain', 'Detal', ['class' => 'col-md-3 control-label']) }}
+							<div class="col-md-8">
+								<div class="input-group">
+									{{ Form::number('sale_gain', null, ['class' => 'form-control']) }}
+									<span class="input-group-addon"> % </span>
+								</div>
 							</div>
 						</div>
 						<div class="form-group form-actions">

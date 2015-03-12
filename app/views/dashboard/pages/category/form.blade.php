@@ -1,10 +1,10 @@
 @extends('dashboard.pages.layout')
 @section('class_icon_page') gi gi-fins @stop
 @section('title') 
-	@if($category->exists) Categoría: {{ $category->name }} @else Nueva Categoría @endif 
+	{{ $category->form_name }}
 @stop
 @section('title_page') 
-	@if($category->exists) Categoría: {{ $category->name }} @else Nueva Categoría @endif 
+	{{ $category->form_name }}
 @stop
 @section('breadcrumbs')
 	@if($category->exists)
@@ -61,6 +61,24 @@
 								{{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) }}
 							</div>
 						</div>
+						<div class="form-group">
+							{{ Form::label('wholesale_gain', 'Por mayor', ['class' => 'col-md-3 control-label']) }}
+							<div class="col-md-8">
+								<div class="input-group">
+									{{ Form::number('wholesale_gain', null, ['class' => 'form-control']) }}
+									<span class="input-group-addon"> % </span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							{{ Form::label('sale_gain', 'Detal', ['class' => 'col-md-3 control-label']) }}
+							<div class="col-md-8">
+								<div class="input-group">
+									{{ Form::number('sale_gain', null, ['class' => 'form-control']) }}
+									<span class="input-group-addon"> % </span>
+								</div>
+							</div>
+						</div>
 						<div class="form-group form-actions">
 						    <div class="col-md-12">
 						        <button type="submit" class="btn btn-effect-ripple btn-primary" style="position:relative; float:right;">
@@ -84,7 +102,6 @@
   });
   </script>
   
-  {{-- HTML::script('assets/js/plugins/forms/file-validator.js') --}}
-  {{ HTML::script('assets/dashboard/js/pages/formProducts.js'); }}
+  {{ HTML::script('assets/dashboard/js/pages/formCategories.js'); }}
   <script> $(function (){ formProducts.init(); });</script>
 @stop

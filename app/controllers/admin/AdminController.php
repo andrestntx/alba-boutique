@@ -6,7 +6,7 @@
 	{
 		public function showWelcome()
 		{
-			return Redirect::to('admin/productos');
+			return Redirect::to('admin/mensajes');
 		}
 		
 	}

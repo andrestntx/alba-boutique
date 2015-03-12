@@ -15,9 +15,16 @@
     <ul class="nav navbar-nav-custom pull-right">
         <!-- Search Form -->
         <li>
-          <strong class="hidden-xs" style="height: 50px; line-height: 50px; padding: 0 10px; margin: 0; font-weight: 200; font-size: 16px; color:white;">{{ Auth::user()->name }}</strong>  
+            {{ Form::open(['route' => 'productos.buscar', 'method' => 'get', 'class' => 'navbar-form-custom']) }}
+                {{ Form::text('id', null, ['class' => 'form-control', 'placeholder' => 'Buscar Referencia..']) }}
+            {{ Form::close() }}
         </li>
         <!-- END Search Form -->
+
+        <li>
+          <strong class="hidden-xs" style="height: 50px; line-height: 50px; padding: 0 10px; margin: 0; font-weight: 200; font-size: 16px; color:white;">{{ Auth::user()->name }}</strong>  
+        </li>
+        
 
         <!-- Alternative Sidebar Toggle Button -->
         <li>

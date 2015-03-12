@@ -42,11 +42,15 @@ Route::group(array('before' => 'auth'), function()
 {
 	Route::group(array('prefix' => 'admin'), function()
 	{
+		View::share('categoriesMenu', Category::all());
+
 		Route::get('/', ['uses' => 'AdminController@showWelcome']);
-	    Route::resource('productos', 'ProductController');
 	    Route::resource('categorias', 'CategoryController');
+	    Route::resource('categorias.productos', 'CategoriesProductsController');
 
 	    Route::get('mensajes', ['uses' => 'MessagesController@index']);
+	    Route::get('buscar-producto', ['as' => 'productos.buscar', 'uses' => 'ProductController@search']);
+	    Route::get('descargar-pdf', ['as' => 'productos.pdf', 'uses' => 'ProductController@generatePdf']);
 	});   
 
 	Route::get('logout', 'AuthController@getLogout');

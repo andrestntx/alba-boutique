@@ -1,8 +1,8 @@
 @extends('dashboard.pages.layout')
-@section('title') Productos @stop
+@section('title') Productos de {{ $category->name }} @stop
 @section('title_page')
-	<i class="gi gi-coat_hanger"></i> Productos 
- 	<a href="{{ route('admin.productos.create') }}" class="btn btn-primary"> 
+	<i class="gi gi-coat_hanger"></i> {{ $category->name }}
+ 	<a href="{{ route('admin.categorias.productos.create', $category->id) }}" class="btn btn-primary"> 
  		<i class="fa fa-plus"></i> Agregar
 	</a> 
 @stop
@@ -10,7 +10,7 @@
 	<div class="row" id="catalog">
 	    @foreach($products as $product)
 	        <div class="col-md-4 col-sm-6 col-xs-12 thumb">
-	        	<a href="{{ route('admin.productos.edit', $product->id) }}" class="widget">
+	        	<a href="{{ route('admin.categorias.productos.edit', [$category->id, $product->id]) }}" class="widget">
 		        	<div class="widget">
 						<div class="widget-content widget-content-mini themed-background-muted" style="height:35px; overflow: hidden;">
 							<div class="pull-right text-muted">Ref: {{ $product->id }}</div>
@@ -22,8 +22,10 @@
 			            	</div>
 						</div>
 						<div class="widget-content widget-content-mini themed-background-muted">
-							<div class="pull-right text-muted">$ {{ $product->wholesale_price }}</div>
-							<i class="fa fa-price"></i>$ {{ $product->formated_sale_price }}
+							<div class="pull-right text-danger">
+								<i class="fa fa-dollar"></i> {{ $product->formated_wholesale_price }}
+							</div>
+							<i class="fa fa-dollar"></i> {{ $product->formated_sale_price }}
 						</div>
 					</div>
 				</a>

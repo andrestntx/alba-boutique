@@ -2,7 +2,9 @@
 
 class Product extends Eloquent {
 
-	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible', 'category_id'];
+	protected $fillable = ['id', 'name', 'description', 'sizes', 'price', 'visible', 'category_id', 
+        'wholesale_gain', 'sale_gain'
+    ];
 	protected $autoincrements = false;
     protected static $path_images = 'img/products/'; 
     protected static $extension_images = '.jpg';
@@ -55,93 +57,37 @@ class Product extends Eloquent {
     /* Mutators */
     public function getFormatedSalePriceAttribute()
     {
-        return number_format($this->sale_price, 0);
+        return number_format(round($this->sale_price, -2), 0);
+    }
+
+    public function getFormatedWholesalePriceAttribute()
+    {
+        return number_format(round($this->wholesale_price, -2), 0);
     }
 
     public function getSalePriceAttribute()
     {
-        if ($this->category->isLingerie()) 
+        if(is_null($this->sale_gain))
         {
-            if($this->price <= 5000)
-            {
-                return $this->price * 3;
-            }
-            elseif($this->price > 5000 && $this->price <= 6000)
-            {
-                return $this->price * 2.75;
-            }
-            elseif($this->price > 6000 && $this->price <= 7500)
-            {
-                return $this->price * 2.5;
-            }
-            else
-            {
-                return $this->price * 2.16;
-            }
+            return $this->price * (1 + $this->category->sale_gain / 100);
         }
-        elseif($this->category->isPijama())
+
+        return $this->price * (1 + $this->sale_gain / 100);
+    }
+
+    public function getWholesalePriceAttribute()
+    {
+        if(is_null($this->wholesale_gain))
         {
-            if($this->price < 20000)
-            {
-                return $this->price * 2.5;
-            }
-            elseif($this->price >= 20000 && $this->price < 22000)
-            {
-                return $this->price * 2.4;
-            }
-            else
-            {
-                return $this->price * 2.27;
-            }
+            return $this->price * (1 + $this->category->wholesale_gain / 100);
         }
-        elseif ($this->category->isMenUnderwear()) 
-        {
-            if($this->price < 8000)
-            {
-                return $this->price * 2.16;
-            }
-            elseif($this->price >= 8000 && $this->price <= 10000)
-            {
-                return 18000;
-            }
-            else
-            {
-                return $this->price * 2;
-            }
-        }
-        elseif ($this->category->isFemaleSportswear()) 
-        {
-            if($this->price <= 30000)
-            {
-                return $this->price * 2.2;
-            }
-            elseif($this->price > 30000 && $this->price <= 40000)
-            {
-                return $this->price * 1.9;
-            }
-            elseif($this->price > 40000 && $this->price <= 50000)
-            {
-                return $this->price * 1.75;
-            }
-            else
-            {
-                return $this->price * 1.7;
-            }
-        }
-        elseif ($this->category->isGirdle() || $this->category->isSwimwear()) 
-        {
-            return $this->price * 1.72;
-        }
+
+        return $this->price * (1 + $this->wholesale_gain / 100);
     }
 
     public function getFormatedPriceAttribute()
     {
         return number_format($this->price, 0);
-    }
-
-    public function getWholesalePriceAttribute()
-    {
-        return round($this->sale_price - ($this->sale_price * 0.40), -2);  
     }
 
     public function getShortNameAttribute()
@@ -204,7 +150,9 @@ class Product extends Eloquent {
         	'id'           => 'unique:products',
             'name'         => 'required|max:100|unique:products',
             'image'        => 'mimes:jpeg,png,bmp|max:1500',
-            'category_id'  => 'required'
+            'category_id'  => 'required',
+            'wholesale_gain'    => 'integer',
+            'sale_gain'         => 'integer'
         );
 
         if ($this->exists)
@@ -243,10 +191,22 @@ class Product extends Eloquent {
             }
 
             $this->fill(array_map('trim',$data));
+            
             if(!$this->exists)
             {
                 $this->name_url = strtolower(str_replace(' ', '-', trim($data['name'])));
             }
+
+            if(empty($data['wholesale_gain']))
+            {
+                $this->wholesale_gain = null;
+            }
+
+            if(empty($data['sale_gain']))
+            {
+                $this->sale_gain = null;
+            }
+
             $this->save();
 
             if(array_key_exists('image', $data))
