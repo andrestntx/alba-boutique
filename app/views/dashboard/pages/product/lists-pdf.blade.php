@@ -34,6 +34,7 @@
 		}
 		.product .product-info{
 			width: 35%;
+			padding-left: 10px;
 		}
 		.product .product-info h3{
 			font-size: 19px;
@@ -48,7 +49,7 @@
 			font-size: 22px;
 		}
 		.product .product-img img{
-			max-width: 100%;
+			max-width: 90%;
 			max-height: 400px;
 		}
 
@@ -71,13 +72,10 @@
 							{{ HTML::image($product->image, $product->name, [])}}
 						</div>
 						<div class="product-info">
-							<h3 id="product-name"> {{ $product->name }} </h3>
 							<h3> <span class="product-column">Referencia:</span> {{ $product->id }} </h3>
-							
 							<h3> <span class="product-column">Precio Mayorista:</span> ${{ $product->formated_wholesale_price }} </h3>
 							<h3> <span class="product-column">Precio Sugerido:</span> ${{ $product->formated_sale_price }} </h3>
 							<h3> <span class="product-column">Tallas:</span>  {{ $product->sizes }} </h3>
-							<h3> <span class="product-column">Detalle:</span> {{ $product->description }} </h3>
 						</div>
 					</div>
 				@endforeach

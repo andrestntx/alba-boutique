@@ -29,12 +29,12 @@ class ProductController extends \BaseController {
 	}
 
 
-	public function generatePdf()
+	public function generatePdf($category_id)
 	{
-		$categories = Category::with('products')->get();
+		$categories = Category::whereId($category_id)->with('products')->get();
 		$pdf = PDF::loadView('dashboard.pages.product.lists-pdf', compact('categories'));
-		return $pdf->download('productos.pdf');
-		return View::make('dashboard.pages.product.lists-pdf', compact('categories'));
+		return $pdf->download($categories[0]->name.'.pdf');
+		//return View::make('dashboard.pages.product.lists-pdf', compact('categories'));
 	}
 
 }

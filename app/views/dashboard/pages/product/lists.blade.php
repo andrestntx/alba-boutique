@@ -5,6 +5,9 @@
  	<a href="{{ route('admin.categorias.productos.create', $category->id) }}" class="btn btn-primary"> 
  		<i class="fa fa-plus"></i> Agregar
 	</a> 
+	<a href="{{ route('admin.categorias.productos.pdf', $category->id) }}" style="position:relative; float:right; vertical-align: middle;" class="btn btn-effect-ripple btn-warning">
+			<i class="fa fa-pencil"></i> Descargar PDF
+	</a>
 @stop
 @section('content_body_page')
 	<div class="row" id="catalog">
