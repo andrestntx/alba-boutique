@@ -34,8 +34,19 @@ class ProductController extends \BaseController {
 		$categories = Category::whereId($category_id)->with(['products' => function($query){
 			$query->whereVisible(1)->get();
 		}])->get();
+
 		$pdf = PDF::loadView('dashboard.pages.product.lists-pdf', compact('categories'));
 		return $pdf->download($categories[0]->name.'.pdf');
+	}
+
+	public function generatePricePdf($category_id)
+	{
+		$categories = Category::whereId($category_id)->with(['products' => function($query){
+			$query->whereVisible(1)->get();
+		}])->get();
+
+		$pdf = PDF::loadView('dashboard.pages.product.price-pdf', compact('categories'));
+		return $pdf->download('Precios '.$categories[0]->name.'.pdf');
 	}
 
 }

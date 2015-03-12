@@ -51,6 +51,7 @@ Route::group(array('before' => 'auth'), function()
 	    Route::get('mensajes', ['uses' => 'MessagesController@index']);
 	    Route::get('buscar-producto', ['as' => 'productos.buscar', 'uses' => 'ProductController@search']);
 	    Route::get('categorias/{id}/descargar-pdf', ['as' => 'admin.categorias.productos.pdf', 'uses' => 'ProductController@generatePdf']);
+	    Route::get('categorias/{id}/descargar-precios', ['as' => 'admin.categorias.productos.precios-pdf', 'uses' => 'ProductController@generatePricePdf']);
 	});   
 
 	Route::get('logout', 'AuthController@getLogout');
