@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title></title>
@@ -27,6 +28,10 @@
 				margin-top: 0px;
 			}
 
+			table {
+				margin-bottom: 20px;
+			}
+			
 			table.tftable {	
 				font-size:12px;
 				color:#333333;
@@ -56,6 +61,10 @@
 				padding: 8px;
 				border-style: solid;
 				border-color: #729ea5;
+			}
+
+			p {
+				margin: 5px;
 			}
 			
 		</style>
@@ -96,5 +105,10 @@
 				</table>
 			</div>
 		@endforeach
+
+		<p>Alba Boutique</p> 
+		<p>Carrera 38 # 23-68 San Benito / Villavicencio </p> 
+		<p>Telefono - WhatsApp: 313 816 7962</p> 
 	</body>
+
 </html>

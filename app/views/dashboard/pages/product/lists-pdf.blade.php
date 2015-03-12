@@ -58,6 +58,10 @@
 			max-height: 390px;
 		}
 
+		p {
+			margin: 5px;
+		}
+
 	</style>
 </head>
 <body>
@@ -87,5 +91,9 @@
 			</div>
 		</div>
 	@endforeach
+
+	<p>Alba Boutique</p> 
+	<p>Carrera 38 # 23-68 San Benito / Villavicencio </p> 
+	<p>Telefono - WhatsApp: 313 816 7962</p> 
 </body>
 </html>
