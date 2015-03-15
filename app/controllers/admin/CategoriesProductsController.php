@@ -118,7 +118,7 @@ class CategoriesProductsController extends \BaseController {
     		$product->delete();
     		$result = array('success' => true, 'msg' => 'Producto "' . $product->name . '" eliminado', 'id' => $product->id);
     	} catch (Exception $e) {
-    		$result = array('success' => false, 'msg' => 'La Producto no se puede eliminar', 'id' => $product->id);
+    		$result = array('success' => false, 'msg' => 'El Producto no se puede eliminar', 'id' => $product->id);
     	}
 
         if (Request::ajax())

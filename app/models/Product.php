@@ -28,7 +28,8 @@ class Product extends Eloquent {
     public static function findOrFailByNameUrl($name_url, $category_name_url)
     {
         $product = self::select('products.name', 'products.description', 'products.sizes', 'products.price', 'products.name_url',
-            'products.id', 'products.category_id', 'categories.name as category_name', 'categories.name_url as category_name_url')
+            'products.id', 'products.category_id', 'products.sale_gain as sale_gain', 'products.wholesale_gain as wholesale_gain', 
+            'categories.name as category_name', 'categories.name_url as category_name_url')
             ->joinCategoryByNameUrl($name_url, $category_name_url)->first();
         if(is_null($product))
         {

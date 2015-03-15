@@ -78,7 +78,7 @@
 				@foreach($category->products as $product)
 					<div class="product">
 						<div class="product-img">
-							{{ HTML::image($product->image, $product->name, [])}}
+							{{ HTML::image($product->small_image, $product->name, [])}}
 						</div>
 						<div class="product-info">
 							<h3> <span class="product-column">Referencia:</span> {{ $product->id }} </h3>
