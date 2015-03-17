@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Barryvdh\DomPDF\ServiceProvider',
+		'Chumper\Zipper\ZipperServiceProvider'
 	),
 
 	/*
@@ -191,6 +192,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Image' 			=> 'Intervention\Image\Facades\Image',
 		'PDF' 				=> 'Barryvdh\DomPDF\Facade',
+		'Zipper' 			=> 'Chumper\Zipper\Zipper'
 
 	),
 

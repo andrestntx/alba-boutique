@@ -44,15 +44,7 @@ Route::group(array('before' => 'auth'), function()
 	{
 		View::share('categoriesMenu', Category::all());
 
-		Route::get('formatear-imagenes', function(){
-			$products = Product::all();
-			foreach ($products as $product) 
-			{
-				$product->formateImages($product->id);
-			}
-
-			echo " resultó excelente ";
-		});
+		Route::controller('imagenes', 'ImagesController');
 
 		Route::get('/', ['uses' => 'AdminController@showWelcome']);
 	    Route::resource('categorias', 'CategoryController');

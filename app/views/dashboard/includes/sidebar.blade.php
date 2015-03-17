@@ -36,6 +36,23 @@
                         <span class="sidebar-nav-mini-hide">Mensajes</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" class="sidebar-nav-menu"><span class="sidebar-nav-ripple animate" style="height: 220px; width: 220px; top: -85px; left: 48px;"></span><i class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-file-photo-o sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Imagenes</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{URL::to('admin/imagenes/precios-detal')}}">Precios al detal</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::to('admin/imagenes/precios-por-mayor')}}">Precios por mayor</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::to('admin/imagenes/todos-los-precios')}}">Todos los precios</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::to('admin/imagenes/actualizar')}}">Actualizar</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- END Sidebar Navigation -->
         </div>

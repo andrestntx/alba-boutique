@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"guzzlehttp/guzzle": "~4.0",
 		"intervention/image": "*",
-		"barryvdh/laravel-dompdf": "*"
+		"barryvdh/laravel-dompdf": "*",
+		"Chumper/Zipper": "0.5.x"
 	},
 	"autoload": {
 		"classmap": [
