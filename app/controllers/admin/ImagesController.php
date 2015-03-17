@@ -12,7 +12,10 @@ class ImagesController extends \BaseController {
 		$files = glob('img/products/price_sale/*');
 		Zipper::make('products.zip')->add($files)->close();
 
-		return Response::download('products.zip', 'ProductosConPreciosAlDetal.zip');
+		if(File::exists('products.zip'))
+		{
+			return Response::download('products.zip', 'ProductosConPreciosAlDetal.zip');
+		}
 	}
 
 	public function getPreciosPorMayor()
