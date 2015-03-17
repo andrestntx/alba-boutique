@@ -10,28 +10,28 @@ class ImagesController extends \BaseController {
 	public function getPreciosDetal()
 	{
 		$files = glob('img/products/price_sale/*');
-		Zipper::make('products.zip')->add($files)->close();
+		Zipper::make('files/products.zip')->add($files)->close();
 
-		if(File::exists('products.zip'))
+		if(File::exists('files/products.zip'))
 		{
-			return Response::download('products.zip', 'ProductosConPreciosAlDetal.zip');
+			return Response::download('files/products.zip', 'ProductosConPreciosAlDetal.zip');
 		}
 	}
 
 	public function getPreciosPorMayor()
 	{
 		$files = glob('img/products/price_wholesale/*');
-		Zipper::make('products.zip')->add($files)->close();
+		Zipper::make('files/products.zip')->add($files)->close();
 
-		return Response::download('products.zip', 'ProductosConPreciosPorMayor.zip');
+		return Response::download('files/products.zip', 'ProductosConPreciosPorMayor.zip');
 	}
 
 	public function getTodosLosPrecios()
 	{
 		$files = glob('img/products/price_sale_wholesale/*');
-		Zipper::make('products.zip')->add($files)->close();
+		Zipper::make('files/products.zip')->add($files)->close();
 
-		return Response::download('products.zip', 'ProductosConTodosLosPrecios.zip');
+		return Response::download('files/products.zip', 'ProductosConTodosLosPrecios.zip');
 	}
 
 	public function getActualizar()
