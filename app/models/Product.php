@@ -281,10 +281,14 @@ class Product extends Eloquent {
 
     public function formateImages($id)
     {
-        $this->widenImage(320, $this->path_small_image, $id);
-        $this->widenTextImage(560, $this->path_price_sale_image, $id, ['Referencia ' . $id, 'Precio $' . $this->formated_sale_price]);
-        $this->widenTextImage(560, $this->path_price_wholesale_image, $id, ['Referencia ' . $id, 'Precio Mayor $' . $this->formated_wholesale_price]);
-        $this->widenTextImage(560, $this->path_price_sale_wholesale_image, $id, ['Referencia ' . $id, 'Precio Segerido $' . $this->formated_sale_price, 'Precio Mayor $' . $this->formated_wholesale_price]);
+        try {
+            $this->widenImage(320, $this->path_small_image, $id);
+            $this->widenTextImage(560, $this->path_price_sale_image, $id, ['Referencia ' . $id, 'Precio $' . $this->formated_sale_price]);
+            $this->widenTextImage(560, $this->path_price_wholesale_image, $id, ['Referencia ' . $id, 'Precio Mayor $' . $this->formated_wholesale_price]);
+            $this->widenTextImage(560, $this->path_price_sale_wholesale_image, $id, ['Referencia ' . $id, 'Precio Segerido $' . $this->formated_sale_price, 'Precio Mayor $' . $this->formated_wholesale_price]);
+        } catch (Exception $e) {
+            
+        }
     }
 
     /* End Save And Validation */
