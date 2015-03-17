@@ -1,0 +1,1 @@
+Espacio para las fotos de los productos
