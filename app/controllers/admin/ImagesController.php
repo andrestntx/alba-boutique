@@ -20,8 +20,13 @@ class ImagesController extends \BaseController {
 
 	public function getPreciosPorMayor()
 	{
-		$files = glob('img/products/price_wholesale/*');
-		Zipper::make('files/products.zip')->add($files)->close();
+		//$files = glob('img/products/price_wholesale/*');
+		//Zipper::make('files/products.zip')->add($files)->close();
+
+		$z = new ZipArchive();
+		$z->open("test.zip", ZIPARCHIVE::CREATE);
+		folderToZip("img/products/price_wholesale", $z);
+		$z->close();
 
 		return Response::download('files/products.zip', 'ProductosConPreciosPorMayor.zip');
 	}
@@ -29,9 +34,10 @@ class ImagesController extends \BaseController {
 	public function getTodosLosPrecios()
 	{
 		$files = glob('img/products/price_sale_wholesale/*');
-		Zipper::make('files/products.zip')->add($files)->close();
+		var_dump($files);
+		//Zipper::make('files/products.zip')->add($files)->close();
 
-		return Response::download('files/products.zip', 'ProductosConTodosLosPrecios.zip');
+		//return Response::download('files/products.zip', 'ProductosConTodosLosPrecios.zip');
 	}
 
 	public function getActualizar()
