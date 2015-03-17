@@ -12,7 +12,7 @@
 			<i class="hi hi-list-alt"></i> Lista Precios
 	</a>
 
-	<a href="{{ route('admin.categorias.productos.pdf', $category->id) }}" class="btn btn-effect-ripple btn-warning pull-right">
+	<a href="{{ route('admin.categorias.productos.pdf', $category->id) }}" class="btn btn-effect-ripple btn-warning pull-right" target="_blank">
 			<i class="fi fi-doc"></i> Descargar PDF
 	</a>
 @stop

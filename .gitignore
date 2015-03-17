@@ -1,6 +1,9 @@
 /bootstrap/compiled.php
 /vendor
 /public/img/products/*.jpg
+/public/img/products/price_sale/*.jpg
+/public/img/products/price_wholesale/*.jpg
+/public/img/products/price_sale_wholesale/*.jpg
 /public/img/categories/*.jpg
 composer.phar
 .env.*.php

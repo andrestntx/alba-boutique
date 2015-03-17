@@ -7,6 +7,9 @@ class Product extends Eloquent {
     ];
 	protected $autoincrements = false;
     protected static $path_images = 'img/products/'; 
+    protected static $path_images_price_sale = 'img/products/price_sale/';
+    protected static $path_images_price_wholesale = 'img/products/price_wholesale/'; 
+    protected static $path_images_price_sale_wholesale = 'img/products/price_sale_wholesale/'; 
     protected static $extension_images = '.jpg';
 
     /* Relations */
@@ -112,6 +115,21 @@ class Product extends Eloquent {
         return self::$path_images . $this->name_url . '-small' . self::$extension_images;
     }
 
+    public function getPathPriceSaleImageAttribute()
+    {
+        return self::$path_images_price_sale . $this->id . self::$extension_images;
+    }
+
+    public function getPathPriceWholeSaleImageAttribute()
+    {
+        return self::$path_images_price_wholesale . $this->id . self::$extension_images;
+    }
+
+    public function getPathPriceSaleWholeSaleImageAttribute()
+    {
+        return self::$path_images_price_sale_wholesale . $this->id . self::$extension_images;
+    }
+
     public function getSmallImageAttribute()
     {
         $this->updateImage(320, $this->path_small_image);
@@ -129,8 +147,31 @@ class Product extends Eloquent {
             $image = Image::make(self::$path_images . $id . self::$extension_images);
             $image->widen($width);
             $image->save($path);
-        }
-        
+        }  
+    }
+
+    public function widenTextImage($width, $path, $id, $text = [])
+    {
+        if(File::exists(self::$path_images . $id . self::$extension_images))
+        {
+            $image = Image::make(self::$path_images . $id . self::$extension_images);
+            //$image->widen($width);
+
+            $position_y = 10;
+            foreach($text as $t) 
+            {
+                $image->text($t, $image->width() - 10, $image->height() - $position_y, function($font) {
+                    $font->file(3);
+                    $font->color('#000');
+                    $font->align('right');
+                    $font->valign('bottom');
+                });
+                $position_y += 15;
+            }
+            
+
+            $image->save($path);
+        }  
     }
 
     public function updateImage($width, $path)
@@ -231,11 +272,20 @@ class Product extends Eloquent {
             {
                 $img->widen(560);
             }
+
             $img->save(self::$path_images . $id . self::$extension_images);
             $this->widenImage(560, $this->path_image, $id);
-            $this->widenImage(320, $this->path_small_image, $id);
+            $this->formateImages($id);
     	}
 	}
+
+    public function formateImages($id)
+    {
+        $this->widenImage(320, $this->path_small_image, $id);
+        $this->widenTextImage(560, $this->path_price_sale_image, $id, ['Referencia ' . $id, 'Precio $' . $this->formated_sale_price]);
+        $this->widenTextImage(560, $this->path_price_wholesale_image, $id, ['Referencia ' . $id, 'Precio Mayor $' . $this->formated_wholesale_price]);
+        $this->widenTextImage(560, $this->path_price_sale_wholesale_image, $id, ['Referencia ' . $id, 'Precio Segerido $' . $this->formated_sale_price, 'Precio Mayor $' . $this->formated_wholesale_price]);
+    }
 
     /* End Save And Validation */
 }

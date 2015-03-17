@@ -36,7 +36,7 @@ class ProductController extends \BaseController {
 		}])->get();
 
 		$pdf = PDF::loadView('dashboard.pages.product.lists-pdf', compact('categories'));
-		return $pdf->download($categories[0]->name.'.pdf');
+		return $pdf->stream($categories[0]->name.'.pdf');
 	}
 
 	public function generatePricePdf($category_id)
@@ -46,7 +46,7 @@ class ProductController extends \BaseController {
 		}])->get();
 
 		$pdf = PDF::loadView('dashboard.pages.product.price-pdf', compact('categories'));
-		return $pdf->download('Precios '.$categories[0]->name.'.pdf');
+		return $pdf->stream('Precios '.$categories[0]->name.'.pdf');
 	}
 
 }
