@@ -9,11 +9,8 @@ class ImagesController extends \BaseController {
 	 */
 	public function getPreciosDetal()
 	{
-		//$zipper = new \Chumper\Zipper\Zipper;
-		//$zipper->remove('products.zip');
-
 		$files = glob('img/products/price_sale/*');
-		Zipper::zip('products.zip')->add($files)->close();
+		Zipper::make('products.zip')->add($files)->close();
 
 		return Response::download('products.zip', 'ProductosConPreciosAlDetal.zip');
 	}
