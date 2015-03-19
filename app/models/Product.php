@@ -117,7 +117,7 @@ class Product extends Eloquent {
 
     public function getPathPriceSaleImageAttribute()
     {
-        return self::$path_images_price_sale . $this->id . self::$extension_images;
+         return self::$path_images_price_sale . $this->id . self::$extension_images;
     }
 
     public function getPathPriceWholeSaleImageAttribute()
@@ -129,6 +129,38 @@ class Product extends Eloquent {
     {
         return self::$path_images_price_sale_wholesale . $this->id . self::$extension_images;
     }
+
+    public function getPriceSaleImageAttribute()
+    {
+        if(!File::exists($this->path_price_sale_image))
+        {
+            $this->formateImages();
+        }
+
+        return $this->path_price_sale_image;
+    }
+
+    public function getPriceWholeSaleImageAttribute()
+    {
+        if(!File::exists($this->path_price_whole_sale_image))
+        {
+            $this->formateImages();
+        }
+
+        return $this->path_price_whole_sale_image;
+    }
+
+    public function getPriceSaleWholeSaleImageAttribute()
+    {
+        if(!File::exists($this->path_price_sale_whole_sale_image))
+        {
+            $this->formateImages();
+        }
+
+        return $this->path_price_sale_whole_sale_image;
+    }
+
+    
 
     public function getSmallImageAttribute()
     {
@@ -155,7 +187,7 @@ class Product extends Eloquent {
         if(File::exists(self::$path_images . $id . self::$extension_images))
         {
             $image = Image::make(self::$path_images . $id . self::$extension_images);
-            //$image->widen($width);
+            $image->widen($width);
 
             $position_y = 10;
             foreach($text as $t) 
@@ -255,6 +287,8 @@ class Product extends Eloquent {
         	{
         		$this->uploadImage($data['image'], $data['id']);
         	}
+
+            $this->formateImages($data['id']);
           
             return true;
         }
@@ -275,14 +309,18 @@ class Product extends Eloquent {
 
             $img->save(self::$path_images . $id . self::$extension_images);
             $this->widenImage(560, $this->path_image, $id);
-            $this->formateImages($id);
+            $this->widenImage(320, $this->path_small_image, $id);
     	}
 	}
 
-    public function formateImages($id)
+    public function formateImages($id = null)
     {
+        if(is_null($id))
+        {
+            $id = $this->id;
+        }
+
         try {
-            $this->widenImage(320, $this->path_small_image, $id);
             $this->widenTextImage(560, $this->path_price_sale_image, $id, ['Referencia ' . $id, 'Precio $' . $this->formated_sale_price]);
             $this->widenTextImage(560, $this->path_price_wholesale_image, $id, ['Referencia ' . $id, 'Precio Mayor $' . $this->formated_wholesale_price]);
             $this->widenTextImage(560, $this->path_price_sale_wholesale_image, $id, ['Referencia ' . $id, 'Precio Segerido $' . $this->formated_sale_price, 'Precio Mayor $' . $this->formated_wholesale_price]);

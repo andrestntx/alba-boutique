@@ -31,7 +31,7 @@ class ProductController extends \BaseController {
 	public function downloadSale($id)
 	{
 		$product = Product::findOrFail($id);
-		return Response::download($product->path_price_sale_image, $product->id.'-detal.jpg');
+		return Response::download($product->price_sale_image, $product->id.'-detal.jpg');
 	}
 
 	public function downloadWholesale($id)
