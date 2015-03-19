@@ -83,9 +83,9 @@
                                         <strong class="text-info">Referencia:  </strong>
                                         <span id="ref" itemprop="sku"> {{ $product->id }} </span>
                                     </p>
-                                    <div class="btn btn-effect-ripple btn-success">
+                                    <a href="tel: 313 816 7962" class="btn btn-effect-ripple btn-success">
                                         <i class="fa fa-phone"></i> 313 816 7962
-                                    </div>
+                                    </a>
                                     <a href="{{ URL::to('descargar-producto/'.$product->id) }}" id="download" type="button" class="btn btn-effect-ripple btn-primary" itemscope="" itemtype="http://schema.org/DownloadAction"><i class="hi hi-save"></i> Descargar</a>
                      
                                 </div>

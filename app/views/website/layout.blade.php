@@ -47,7 +47,7 @@
                             <a href="{{ URL::to('contacto') }}" title="Página de Contacto" itemprop="relatedLink" itemprop="significantLink"><i class="gi gi-envelope"></i> Contacto</a>
                         </li>
                         <li>
-                            <a href=""><spam style="font-size:16px;" itemprop="relatedLink"><i class="fa fa-phone"></i>  313 816 7962</spam></a>
+                            <a href="tel: 313 816 7962"><spam style="font-size:16px;" itemprop="relatedLink"><i class="fa fa-phone"></i>  313 816 7962</spam></a>
                         </li>
                     </ul>
                     {{-- END Main Menu --}}

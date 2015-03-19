@@ -25,7 +25,7 @@ class ProductController extends \BaseController {
 	public function download($id)
 	{
 		$product = Product::findOrFail($id);
-		return Response::download($product->image);
+		return Response::download($product->image, 'alba-boutique-'.$product->id);
 	}
 
 	public function downloadSale($id)
