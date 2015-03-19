@@ -2,25 +2,23 @@
 @section('title') Productos de {{ $category->name }} @stop
 @section('title_page')
 	<i class="gi gi-coat_hanger"></i> {{ $category->name }}
- 	<a href="{{ route('admin.categorias.productos.create', $category->id) }}" class="btn btn-primary"> 
- 		<i class="fa fa-plus"></i> Agregar
+ 	<a href="{{ route('admin.categorias.productos.create', $category->id) }}" class="btn btn-primary" title="Agregar"> 
+ 		<i class="fa fa-plus"></i>
 	</a> 
-	
-@stop
-@section('breadcrumbs')
-	<a href="{{ route('admin.categorias.productos.precios-pdf', $category->id) }}" style="margin: 0 7px;" class="btn btn-effect-ripple btn-success pull-right">
-			<i class="hi hi-list-alt"></i> Lista Precios
+
+	<a href="{{ route('admin.categorias.productos.precios-pdf', $category->id) }}" style="margin: 0 3px;" class="btn btn-effect-ripple btn-success pull-right" title="Lista de Precios" target="_blank">
+		<i class="hi hi-usd"></i> 
 	</a>
 
-	<a href="{{ route('admin.categorias.productos.pdf', $category->id) }}" class="btn btn-effect-ripple btn-warning pull-right" target="_blank">
-			<i class="fi fi-doc"></i> Descargar PDF
+	<a href="{{ route('admin.categorias.productos.pdf', $category->id) }}" class="btn btn-effect-ripple btn-warning pull-right" target="_blank" title="PDF con Productos">
+		<i class="fa fa-file-text"></i>
 	</a>
 @stop
 @section('content_body_page')
 	<div class="row" id="catalog">
 	    @foreach($products as $product)
 	        <div class="col-md-4 col-sm-6 col-xs-12 thumb">
-	        	<a href="{{ route('admin.categorias.productos.edit', [$category->id, $product->id]) }}" class="widget">
+	        	<a href="{{ route('admin.categorias.productos.show', [$category->id, $product->id]) }}" class="widget">
 		        	<div class="widget">
 						<div class="widget-content widget-content-mini themed-background-muted" style="height:35px; overflow: hidden;">
 							<div class="pull-right text-muted">Ref: {{ $product->id }}</div>

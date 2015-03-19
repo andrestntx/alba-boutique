@@ -3,17 +3,12 @@
 	<!-- Blank Header -->
     <div class="content-header">
         <div class="row">
-            <div class="col-sm-7">
+            <div class="col-xs-12">
                 <div class="header-section">
                     <h1 class="h2">
                         <i class="@yield('class_icon_page')"></i> 
                         @yield('title_page', 'Alba Boutique')
                     </h1>
-                </div>
-            </div>
-            <div class="col-sm-5 hidden-xs">
-                <div class="header-section">
-                    @yield('breadcrumbs')
                 </div>
             </div>
         </div>

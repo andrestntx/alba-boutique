@@ -1,17 +1,42 @@
 @extends('dashboard.pages.layout')
 @section('class_icon_page') gi gi-coat_hanger @stop
 @section('title') 
-	{{ $category->name }} - Producto: {{ $product->id }} 
+	{{ $category->name }} - Ref: {{ $product->id }} 
 @stop
 @section('title_page') 
-	<a href="{{route('admin.categorias.productos.index', $category->id)}}">{{ $category->name }}</a> -  Producto: {{ $product->id }} 
-@stop
-@section('breadcrumbs')
-	@if($product->exists)
-		<a href="{{ route('admin.categorias.productos.edit', [$category->id, $product->id]) }}" style="position:relative; float:right; vertical-align: middle;" class="btn btn-effect-ripple btn-warning">
-			<i class="fa fa-pencil"></i> Editar
+	<a href="{{route('admin.categorias.productos.index', $category->id)}}">{{ $category->name }}</a> -  Ref: {{ $product->id }} 
+
+		<a href="{{ route('admin.categorias.productos.edit', [$category->id, $product->id]) }}" style="position:relative; float:right; vertical-align: middle;" class="btn btn-effect-ripple btn-warning" title="Editar Producto">
+			<i class="fa fa-pencil"></i> 
 		</a>
-	@endif
+
+		<div class="btn-group pull-right" style="margin: 0 3px;">
+	        <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-info dropdown-toggle">
+	        	<i class="fa fa-picture-o"></i>
+	        	<span class="caret"></span>
+	       	</a>
+	        <ul class="dropdown-menu text-left">
+	            <li>
+	                <a href="{{route('productos.descargar.detal', $product->id)}}">
+	                    <i class="fa fa-picture-o pull-right"></i>
+	                    <i class="hi hi-usd"></i> Detal
+	                </a>
+	            </li>
+	            <li>
+	                <a href="{{route('productos.descargar.por-mayor', $product->id)}}">
+	                    <i class="fa fa-picture-o pull-right"></i>
+	                    <i class="hi hi-usd"></i> Por Mayor
+	                </a>
+	            </li>
+	            <li class="divider"></li>
+	            <li>
+	                <a href="{{route('productos.descargar.detal-por-mayor', $product->id)}}">
+	                    <i class="fa fa-picture-o pull-right"></i>
+	                    <i class="hi hi-usd"></i> Detal y Por Mayor
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
 @stop
 
 @section('content_body_page')

@@ -24,11 +24,13 @@ class ImagesController extends \BaseController {
 		//Zipper::make('files/products.zip')->add($files)->close();
 
 		$z = new ZipArchive();
-		$z->open("test.zip", ZIPARCHIVE::CREATE);
-		folderToZip("img/products/price_wholesale", $z);
+		$z->open("files/test.zip", ZIPARCHIVE::CREATE);
+		$z->addGlob("img/products/price_wholesale");
 		$z->close();
 
-		return Response::download('files/products.zip', 'ProductosConPreciosPorMayor.zip');
+		var_dump($z);
+
+		//return Response::download('files/test.zip', 'ProductosConPreciosPorMayor.zip');
 	}
 
 	public function getTodosLosPrecios()

@@ -49,6 +49,10 @@ Route::group(array('before' => 'auth'), function()
 		Route::get('/', ['uses' => 'AdminController@showWelcome']);
 	    Route::resource('categorias', 'CategoryController');
 	    Route::resource('categorias.productos', 'CategoriesProductsController');
+	    
+	    Route::get('productos/{id}/descargar/detal', ['as' => 'productos.descargar.detal', 'uses' => 'ProductController@downloadSale']);
+	    Route::get('productos/{id}/descargar/por-mayor', ['as' => 'productos.descargar.por-mayor', 'uses' => 'ProductController@downloadWholesale']);
+	    Route::get('productos/{id}/descargar/detal-y-por-mayor', ['as' => 'productos.descargar.detal-por-mayor', 'uses' => 'ProductController@downloadSaleWholesale']);
 
 	    Route::get('mensajes', ['uses' => 'MessagesController@index']);
 	    Route::get('buscar-producto', ['as' => 'productos.buscar', 'uses' => 'ProductController@search']);

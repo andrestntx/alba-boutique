@@ -28,6 +28,24 @@ class ProductController extends \BaseController {
 		return Response::download($product->image);
 	}
 
+	public function downloadSale($id)
+	{
+		$product = Product::findOrFail($id);
+		return Response::download($product->path_price_sale_image, $product->id.'-detal.jpg');
+	}
+
+	public function downloadWholesale($id)
+	{
+		$product = Product::findOrFail($id);
+		return Response::download($product->path_price_whole_sale_image, $product->id.'-por-mayor.jpg');
+	}
+
+	public function downloadSaleWholesale($id)
+	{
+		$product = Product::findOrFail($id);
+		return Response::download($product->path_price_sale_whole_sale_image, $product->id.'-detal-por-mayor.jpg');
+	}
+
 
 	public function generatePdf($category_id)
 	{
