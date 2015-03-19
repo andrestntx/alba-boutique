@@ -12,6 +12,11 @@ class Product extends Eloquent {
     protected static $path_images_price_sale_wholesale = 'img/products/price_sale_wholesale/'; 
     protected static $extension_images = '.jpg';
 
+    public function getImageIdAttribute()
+    {
+        return self::$path_images.$this->id.'.jpg';
+    }
+
     /* Relations */
     public function category()
     {
