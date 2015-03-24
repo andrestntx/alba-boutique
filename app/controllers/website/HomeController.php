@@ -34,7 +34,9 @@ class HomeController extends BaseController {
 	public function showWholesalePijamas()
 	{
 		$category = Category::find(6);
-		$category->load('products');
+		$category->load(['products' => function($query){
+			$query->whereVisible('1')->orderBy('price');
+		}]);
 
 		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'));
 	}
