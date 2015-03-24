@@ -47,7 +47,9 @@ class HomeController extends BaseController {
 		ContactMessage::create($data);		
 
 		$category = Category::find(6);
-		$category->load('products');
+		$category->load(['products' => function($query){
+			$query->whereVisible('1')->orderBy('price');
+		}]);
 
 		return View::make('website.pages.wholesale.pijamas', compact('pijamas', 'category'))->with('message', 'Gracias. Hemos Recibido tu Mensaje. Pronto te Llamaremos');
 

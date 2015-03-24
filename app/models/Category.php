@@ -12,11 +12,15 @@ class Category extends Eloquent {
     /* Querys */
     public static function findOrFailByNameUrl($name_url)
     {
-        $category = self::with('products')->whereNameUrl($name_url)->first();
+        $category = self::with(['products' => function($query){
+            $query->whereVisible('1')->orderBy('price');
+        }])->whereNameUrl($name_url)->first();
+
         if(is_null($category))
         {
             App::abort('404');
         }
+
         return $category;
     }
 
